@@ -110,17 +110,17 @@ mysql -uroot < init.sql
 * MySQL文件：**[init.sql](./Backend/data/init.sql)**
 * MySQL表图片:
 
-<img src="./Backend/data/table.png" width="50%" alt="MySQL表图片" title="MySQL表图片">
+<img src="./Backend/data/table.png" width="50%" alt="数据库表" title="数据库表">
 
 ## 演示
 
 ### Android
 
-<img src="http://app.biaov.cn/mineapp/images/qrcode/android.png" width="200px" alt="MySQL表图片" title="MySQL表图片">
+<img src="http://app.biaov.cn/mineapp/images/qrcode/android.png" width="200px" alt="Android" title="Android">
 
 ### H5
 
-<img src="http://app.biaov.cn/mineapp/images/qrcode/H5.png" width="200px" alt="MySQL表图片" title="MySQL表图片">
+<img src="http://app.biaov.cn/mineapp/images/qrcode/H5.png" width="200px" alt="H5" title="H5">
 
 ## License
 
