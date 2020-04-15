@@ -1,0 +1,215 @@
+{
+  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    }, {
+      "path": "pages/special/index",
+      "style": {
+        "navigationBarTitleText": "特效"
+      }
+    }, {
+      "path": "pages/imgtxt/index",
+      "style": {
+        "navigationBarTitleText": "图文"
+      }
+    }, {
+      "path": "pages/user/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#f2f2f2"
+      }
+    }
+  ],
+  "subPackages": [{
+    "root": "pages/index", // 首页
+    "pages": [{
+      "path": "hot",
+      "style": {
+        "navigationBarTitleText": "热点"
+      }
+    }]
+  }, {
+    "root": "pages/special", // 特效
+    "pages": [{
+      "path": "details",
+      "style": {
+        "navigationBarTitleText": "特效详情",
+        "navigationStyle": "custom"
+      }
+    }]
+  }, {
+    "root": "pages/imgtxt", // 图文
+    "pages": [{
+      "path": "details",
+      "style": {
+        "navigationBarTitleText": "图文详情"
+      }
+    }]
+  }, {
+    "root": "pages/user", // 我的
+    "pages": [{
+      "path": "aboutUs",
+      "style": {
+        "navigationBarTitleText": "关于MINEAPP"
+      }
+    }, {
+      "path": "editPwd",
+      "style": {
+        "navigationBarTitleText": "修改密码"
+      }
+    }, {
+      "path": "feedback",
+      "style": {
+        "navigationBarTitleText": "我的反馈"
+      }
+    }, {
+      "path": "feedbackDetails",
+      "style": {
+        "navigationBarTitleText": "反馈详情"
+      }
+    }, {
+      "path": "feedbackNeed",
+      "style": {
+        "navigationBarTitleText": "我要反馈"
+      }
+    }, {
+      "path": "mineapp",
+      "style": {
+        "navigationBarTitleText": "MINEAPP"
+      }
+    }, {
+      "path": "nickname",
+      "style": {
+        "navigationBarTitleText": "昵称"
+      }
+    }, {
+      "path": "noteDetails",
+      "style": {
+        "navigationBarTitleText": "笔记详情"
+      }
+    }, {
+      "path": "noteEdit",
+      "style": {
+        "navigationBarTitleText": "写笔记"
+      }
+    }, {
+      "path": "noteList",
+      "style": {
+        "navigationBarTitleText": "笔记列表"
+      }
+    }, {
+      "path": "setting",
+      "style": {
+        "navigationBarTitleText": "我的设置"
+      }
+    }, {
+      "path": "signature",
+      "style": {
+        "navigationBarTitleText": "个性签名"
+      }
+    }]
+  }, {
+    "root": "pages/function", // 功能
+    "pages": [{
+      "path": "index",
+      "style": {
+        "navigationBarTitleText": "功能中心"
+      }
+    }, {
+      "path": "picture",
+      "style": {
+        "navigationBarTitleText": "图片"
+      }
+    }]
+  }, {
+    "root": "pages/public", // 公共
+    "pages": [{
+      "path": "help",
+      "style": {
+        "navigationBarTitleText": "帮助中心"
+      }
+    }, {
+      "path": "helpDetails",
+      "style": {
+        "navigationBarTitleText": "" // 帮助中心详情
+      }
+    }, {
+      "path": "noticeDetails",
+      "style": {
+        "navigationBarTitleText": "公告详情"
+      }
+    }, {
+      "path": "noticeList",
+      "style": {
+        "navigationBarTitleText": "公告列表"
+      }
+    }]
+  }, {
+    "root": "pages/admin", // 账户管理
+    "pages": [{
+      "path": "agreement",
+      "style": {
+        "navigationBarTitleText": "" // 用户协议、隐私条款
+      }
+    }, {
+      "path": "forget",
+      "style": {
+        "navigationBarTitleText": "忘记密码"
+      }
+    }, {
+      "path": "login",
+      "style": {
+        "navigationBarTitleText": "登录"
+          // #ifdef APP-PLUS
+          ,
+        "app-plus": {
+          "animationType": "slide-in-bottom"
+        }
+        // #endif
+      }
+    }, {
+      "path": "register",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    }]
+  }],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "MINEAPP",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#949494",
+    "selectedColor": "#ff6600",
+    // #ifdef APP-PLUS
+    "borderStyle": "#f2f2f2",
+    // #endif
+    "backgroundColor": "#fff",
+    "list": [{
+      "iconPath": "static/icon_nav0101.png",
+      "selectedIconPath": "static/icon_nav0102.png",
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    }, {
+      "iconPath": "./static/icon_nav0201.png",
+      "selectedIconPath": "./static/icon_nav0202.png",
+      "pagePath": "pages/special/index",
+      "text": "特效"
+    }, {
+      "iconPath": "./static/icon_nav0301.png",
+      "selectedIconPath": "./static/icon_nav0302.png",
+      "pagePath": "pages/imgtxt/index",
+      "text": "图文"
+    }, {
+      "iconPath": "./static/icon_nav0401.png",
+      "selectedIconPath": "./static/icon_nav0402.png",
+      "pagePath": "pages/user/index",
+      "text": "我的"
+    }]
+  }
+}
