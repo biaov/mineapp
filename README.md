@@ -127,3 +127,6 @@ mysql -uroot < init.sql
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2020-present, TalkingData.
+
+[^_^]: 我们改变不了生活，但是我们可以改变对待生活的态度。
+[^_^]: 作者就是一个逗比。

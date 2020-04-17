@@ -1,11 +1,11 @@
 /*!
- * Copyright (c) Author biaov
- * Email biaov@qq.com
+ * Copyright (c) Author biaov<biaov@qq.com>
  * Date 2020-03-05
  */
 
 const { NODE_ENV } = require("./variable");
 const { server, app } = NODE_ENV === "development" ? require("./http") : require("./https");
+
 // 初始化应用
 const fs = require("fs");
 const express = require("express"); // 引入express框架
@@ -15,9 +15,7 @@ const mysql = require("mysql"); // 引入mysql模块
 const multiparty = require("multiparty"); // 引入multiparty模块
 const RandomName = require("chinese-random-name"); // 引入chinese-random-name模块
 let router = express.Router(); // 创建一个路由
-
 server.listen(3100); // 监听3100端口
-
 app.use(cors()); // 处理跨域问题
 
 // 使用session
@@ -30,7 +28,7 @@ app.use(session({
   saveUninitialized: true // 强制将未初始化的 session 存储。  默认值是true  建议设置成true
 }));
 
-app.use("/api", router); // 使用路由
+app.use("/api", router); // 使用路由中间件
 
 // 创建连接池
 let pool = mysql.createPool({
@@ -43,9 +41,10 @@ let pool = mysql.createPool({
 });
 
 module.exports = {
-  pool,
-  router,
-  fs,
-  multiparty,
-  RandomName
+  app, // express主程序对象
+  pool, // 连接池对象
+  router, // 路由对象
+  fs, // 读取文件模块
+  multiparty, // form-data模块对象
+  RandomName // 随机名模块对象
 }

@@ -15,8 +15,15 @@ export default {
   onLoad(options) {
     const { Agree, Clause } = DATA; // 模拟数据
     const type = options.data; // 接收数据
-    (type == 1 && (this.content = Agree)) || (this.content = Clause); // 添加内容
-    let title = type == 1 ? "用户协议" : "隐私条款"; // 标题文字
+    let title;
+    // 判断是否为用户协议类别
+    if (type == 1) {
+      this.content = Agree;
+      title = "用户协议";
+    } else {
+      this.content = Clause;
+      title = "隐私条款";
+    }
     // 设置标题
     uni.setNavigationBarTitle({
       title

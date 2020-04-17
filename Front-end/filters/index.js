@@ -1,6 +1,6 @@
 import Vue from "vue";
-// 过滤demo
-Vue.filter("filterDemo", value => {
+// 过滤级别
+Vue.filter("filterLevel", value => {
   switch (value) {
     case 0:
       return "路人";

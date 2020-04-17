@@ -6,7 +6,7 @@
       <list-cell :subtit="nickname" :url="'/pages/user/nickname?data='+nickname">昵称</list-cell>
       <list-cell :subtit="sex|filterSex" @on-click="onSex">性别</list-cell>
       <list-cell :subtit="signature" :url="'/pages/user/signature?data='+$api.EnDnCodeURL(signature)">个性签名</list-cell>
-      <list-cell :subtit="userInfo.mobile">手机号</list-cell>
+      <list-cell :subtit="mobile">手机号</list-cell>
       <list-cell subtit="修改" url="/pages/user/editPwd">登录密码</list-cell>
       <view class="u-btn">
         <view class="btn-default" @tap="onExit"><text class="iconfont icon-tuichu5"></text>退出登录</view>
@@ -28,6 +28,7 @@ export default {
   data() {
     return {
       systemCrashState: true, // 系统崩溃状态
+      mobile: "", // 手机号
       avatar: "", // 用户头像
       nickname: "", // 标题
       sex: 0, // 0:女,1:男
@@ -50,11 +51,10 @@ export default {
       GetUserInfo().then(res => {
         this.$api.RequestMsg(res, false).then(data => {
           this.systemCrashState = false;
-          const { avatar, nickname, sex, signature } = data;
-          this.avatar = avatar;
-          this.nickname = nickname;
-          this.sex = sex;
-          this.signature = signature;
+          // 循环遍历设置用户信息
+          for (const key in data) {
+            this[key] = data[key];
+          }
         });
       });
     },
