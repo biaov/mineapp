@@ -2,8 +2,8 @@
     "name" : "MINEAPP",
     "appid" : "__UNI__8D7249F",
     "description" : "这是一个随意APP",
-    "versionName" : "1.0.0",
-    "versionCode" : 100,
+    "versionName" : "1.0.1",
+    "versionCode" : 101,
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {
@@ -135,12 +135,13 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wxedb0edf60129ec39",
         "setting" : {
             "urlCheck" : false,
             "es6" : true,
             "postcss" : true,
-            "minified" : true
+            "minified" : true,
+            "checkSiteMap" : false
         },
         "usingComponents" : true
     },

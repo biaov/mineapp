@@ -2,7 +2,7 @@
   <!-- 文章列表 -->
   <view class="m-list-article">
     <view v-for="(item,index) in list" :key="index" @tap="handleLi(item)">
-      <image class="u-img" :src="item.src"></image>
+      <image class="u-img" :src="item.src" mode="widthFix" lazy-load></image>
       <view class="u-tit">{{item.title}}</view>
       <view class="u-time">{{item.createTime}}</view>
     </view>

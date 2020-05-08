@@ -1,16 +1,18 @@
 # MINEAPP
 
-<h2 style="text-align:center;"><a href="https://github.com/biaov/MINEAPP"><img src="https://img.shields.io/badge/version-1.0.0-blue" /></a></h2>
+<h2 style="text-align:center;"><a href="https://github.com/biaov/MINEAPP"><img src="https://img.shields.io/badge/version-1.0.1-blue" /></a></h2>
 
 这是一个Hybrid APP，有一些好玩的功能！
 
 ## 功能
 
-| --        | --       | --       | --                   |
-|-----------|----------|----------|----------------------|
-| 登录/注册 | 扫一扫   | 上传图片 | 图片预览             |
-| 图片下载  | 特效预览 | 热更新   | 图片分享到微信朋友圈 |
-| 截屏分享  | 地理定位 |          |                      |
+| --        | --       | --                 | --               |
+|-----------|----------|--------------------|------------------|
+| 登录/注册 | 扫一扫   | 上传图片           | 图片预览         |
+| 图片下载  | 特效预览 | 图片分享到微信好友 | 图片分享到朋友圈 |
+| 截屏分享  | 热更新   | 地理定位           | 微信授权         |
+
+* 更多功能作者后续会持续更新
 
 ## 技术栈
 
@@ -30,12 +32,12 @@
 |-- MINEAPP------------------------------- 项目名称
     |-- .gitignore------------------------ Git上传忽略文件
     |-- README.md------------------------- 项目文档
-    |-- Backend -------------------------- 后端目录
+    |-- BackEnd -------------------------- 后端目录
     |   |-- package-lock.json ------------ 模块的来源及版本号文件
     |   |-- package.json ----------------- 模块描述文件
     |   |-- data ------------------------- 数据库文件目录
     |   |-- src -------------------------- 开发目录
-    |-- Front-end ------------------------ 前端目录
+    |-- FrontEnd ------------------------ 前端目录
     |   |-- App.vue ---------------------- 主要文件
     |   |-- copyright.md ----------------- 版权信息
     |   |-- main.js ---------------------- 入口文件
@@ -69,7 +71,7 @@
 
 #### 运行后端程序
 
-* 因为里面涉及数据库密码及配置SSL证书问题，所以需要修改一下源代码，即[init.js](./Backend/src/init.js)文件。
+* 因为里面涉及数据库密码及配置SSL证书问题，所以需要修改一下源代码，即[init.js](./BackEnd/src/init.js)文件。
 * 如果没有SSL证书，也没有关系，默认为http，及development环境。
 * 数据库默认没有设置密码，如果你的数据有密码，则添加一下你的密码。
 
@@ -81,7 +83,7 @@ npm i -g pm2
 npm i -g nodemon
 ```
 
-##### 进入Backend目录里，安装依赖包文件
+##### 进入BackEnd目录里，安装依赖包文件
 
 ```Basic
 npm i
@@ -107,20 +109,24 @@ mysql -uroot < init.sql
 
 * 你可以直接安装并配置[MySQL](https://www.mysql.com/)。
 * 然后在使用[Navicat Premium](http://www.navicat.com.cn/store/navicat-premium)连接数据库查看。
-* MySQL文件：**[init.sql](./Backend/data/init.sql)**
+* MySQL文件：**[init.sql](./BackEnd/data/init.sql)**
 * MySQL表图片:
 
-<img src="./Backend/data/table.png" width="50%" alt="数据库表" title="数据库表">
+<img src="./BackEnd/data/table.png" width="50%" alt="数据库表" title="数据库表">
 
 ## 演示
 
 ### Android
 
-<img src="http://app.biaov.cn/mineapp/images/qrcode/android.png" width="200px" alt="Android" title="Android">
+<img src="http://app.biaov.cn/mineapp/images/qrcode/Android.png" width="200px" alt="Android" title="Android">
 
 ### H5
 
 <img src="http://app.biaov.cn/mineapp/images/qrcode/H5.png" width="200px" alt="H5" title="H5">
+
+### 微信小程序
+
+<img src="http://app.biaov.cn/mineapp/images/qrcode/Applet.png" width="200px" alt="微信小程序" title="微信小程序">
 
 ## License
 

@@ -12,7 +12,7 @@ router.get(BaseUrl + "versionInfo", (req, res) => {
     code: YES,
     msg: "查询成功",
     data: {
-      version: "1.0.0",
+      version: "1.0.1",
       downUrl: PublicPath + "update/update.wgt"
     }
   });

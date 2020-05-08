@@ -1,5 +1,6 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    /* 主页面 start */
     {
       "path": "pages/index/index",
       "style": {
@@ -21,146 +22,150 @@
         "navigationBarTitleText": "我的",
         "navigationBarBackgroundColor": "#f2f2f2"
       }
-    }
-  ],
-  "subPackages": [{
-    "root": "pages/index", // 首页
-    "pages": [{
-      "path": "hot",
+    },
+    /* 主页面 end */
+    /* 首页 start */
+    {
+      "path": "pages/index/hot",
       "style": {
         "navigationBarTitleText": "热点"
       }
-    }]
-  }, {
-    "root": "pages/special", // 特效
-    "pages": [{
-      "path": "details",
+    },
+    /* 首页 end */
+    /* 特效 start */
+    {
+      "path": "pages/special/details",
       "style": {
         "navigationBarTitleText": "特效详情",
         "navigationStyle": "custom"
       }
-    }]
-  }, {
-    "root": "pages/imgtxt", // 图文
-    "pages": [{
-      "path": "details",
+    },
+    /* 特效 end */
+    /* 图文 start */
+    {
+      "path": "pages/imgtxt/details",
       "style": {
         "navigationBarTitleText": "图文详情"
       }
-    }]
-  }, {
-    "root": "pages/user", // 我的
-    "pages": [{
-      "path": "aboutUs",
+    },
+    /* 图文 end */
+    /* 我的 start */
+    {
+      "path": "pages/user/aboutUs",
       "style": {
         "navigationBarTitleText": "关于MINEAPP"
       }
     }, {
-      "path": "editPwd",
+      "path": "pages/user/editPwd",
       "style": {
         "navigationBarTitleText": "修改密码"
       }
     }, {
-      "path": "feedback",
+      "path": "pages/user/feedback",
       "style": {
         "navigationBarTitleText": "我的反馈"
       }
     }, {
-      "path": "feedbackDetails",
+      "path": "pages/user/feedbackDetails",
       "style": {
         "navigationBarTitleText": "反馈详情"
       }
     }, {
-      "path": "feedbackNeed",
+      "path": "pages/user/feedbackNeed",
       "style": {
         "navigationBarTitleText": "我要反馈"
       }
     }, {
-      "path": "mineapp",
+      "path": "pages/user/mineapp",
       "style": {
         "navigationBarTitleText": "MINEAPP"
       }
     }, {
-      "path": "nickname",
+      "path": "pages/user/nickname",
       "style": {
         "navigationBarTitleText": "昵称"
       }
     }, {
-      "path": "noteDetails",
+      "path": "pages/user/noteDetails",
       "style": {
         "navigationBarTitleText": "笔记详情"
       }
     }, {
-      "path": "noteEdit",
+      "path": "pages/user/noteEdit",
       "style": {
         "navigationBarTitleText": "写笔记"
       }
     }, {
-      "path": "noteList",
+      "path": "pages/user/noteList",
       "style": {
         "navigationBarTitleText": "笔记列表"
       }
     }, {
-      "path": "setting",
+      "path": "pages/user/setting",
       "style": {
         "navigationBarTitleText": "我的设置"
       }
     }, {
-      "path": "signature",
+      "path": "pages/user/signature",
       "style": {
         "navigationBarTitleText": "个性签名"
       }
-    }]
-  }, {
-    "root": "pages/function", // 功能
-    "pages": [{
-      "path": "index",
+    },
+    /* 我的 end */
+    /* 功能 start */
+    {
+      "path": "pages/function/authorize",
+      "style": {
+        "navigationBarTitleText": "微信授权"
+      }
+    }, {
+      "path": "pages/function/index",
       "style": {
         "navigationBarTitleText": "功能中心"
       }
     }, {
-      "path": "picture",
+      "path": "pages/function/picture",
       "style": {
         "navigationBarTitleText": "图片"
       }
-    }]
-  }, {
-    "root": "pages/public", // 公共
-    "pages": [{
-      "path": "help",
+    },
+    /* 功能 end */
+    /* 公共 start */
+    {
+      "path": "pages/public/help",
       "style": {
         "navigationBarTitleText": "帮助中心"
       }
     }, {
-      "path": "helpDetails",
+      "path": "pages/public/helpDetails",
       "style": {
         "navigationBarTitleText": "" // 帮助中心详情
       }
     }, {
-      "path": "noticeDetails",
+      "path": "pages/public/noticeDetails",
       "style": {
         "navigationBarTitleText": "公告详情"
       }
     }, {
-      "path": "noticeList",
+      "path": "pages/public/noticeList",
       "style": {
         "navigationBarTitleText": "公告列表"
       }
-    }]
-  }, {
-    "root": "pages/admin", // 账户管理
-    "pages": [{
-      "path": "agreement",
+    },
+    /* 公共 end */
+    /* 账户管理 start */
+    {
+      "path": "pages/admin/agreement",
       "style": {
         "navigationBarTitleText": "" // 用户协议、隐私条款
       }
     }, {
-      "path": "forget",
+      "path": "pages/admin/forget",
       "style": {
         "navigationBarTitleText": "忘记密码"
       }
     }, {
-      "path": "login",
+      "path": "pages/admin/login",
       "style": {
         "navigationBarTitleText": "登录"
           // #ifdef APP-PLUS
@@ -171,12 +176,14 @@
         // #endif
       }
     }, {
-      "path": "register",
+      "path": "pages/admin/register",
       "style": {
         "navigationBarTitleText": "注册"
       }
-    }]
-  }],
+    }
+    /* 账户管理 end */
+  ],
+  "subPackages": [],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "MINEAPP",
@@ -196,17 +203,17 @@
       "pagePath": "pages/index/index",
       "text": "首页"
     }, {
-      "iconPath": "./static/icon_nav0201.png",
+      "iconPath": "/static/icon_nav0201.png",
       "selectedIconPath": "./static/icon_nav0202.png",
       "pagePath": "pages/special/index",
       "text": "特效"
     }, {
-      "iconPath": "./static/icon_nav0301.png",
+      "iconPath": "/static/icon_nav0301.png",
       "selectedIconPath": "./static/icon_nav0302.png",
       "pagePath": "pages/imgtxt/index",
       "text": "图文"
     }, {
-      "iconPath": "./static/icon_nav0401.png",
+      "iconPath": "/static/icon_nav0401.png",
       "selectedIconPath": "./static/icon_nav0402.png",
       "pagePath": "pages/user/index",
       "text": "我的"
