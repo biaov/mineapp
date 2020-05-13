@@ -118,15 +118,17 @@ mysql -uroot < init.sql
 
 ### Android
 
-<img src="http://app.biaov.cn/mineapp/images/qrcode/Android.png" width="200px" alt="Android" title="Android">
+<a href="http://appdown.biaov.cn/ugft"><img src="http://app.biaov.cn/mineapp/images/qrcode/Android.png" width="200px" alt="Android" title="Android"></a>
 
 ### H5
 
-<img src="http://app.biaov.cn/mineapp/images/qrcode/H5.png" width="200px" alt="H5" title="H5">
+<a href="http://mineapph5.app.biaov.cn/"><img src="http://app.biaov.cn/mineapp/images/qrcode/H5.png" width="200px" alt="H5" title="H5"></a>
 
 ### 微信小程序
 
-<img src="http://app.biaov.cn/mineapp/images/qrcode/Applet.png" width="200px" alt="微信小程序" title="微信小程序">
+* 由于个人开发者权限不足，因此只有体验版。
+
+<a href="https://open.weixin.qq.com/sns/getexpappinfo?appid=wxedb0edf60129ec39&path=pages%2Findex%2Findex.html#wechat-redirect" target="_blank"><img src="http://app.biaov.cn/mineapp/images/qrcode/Applet.png" width="200px" alt="微信小程序" title="微信小程序"></a>
 
 ## License
 
