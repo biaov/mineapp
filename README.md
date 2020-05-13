@@ -71,7 +71,7 @@
 
 #### 运行后端程序
 
-* 因为里面涉及数据库密码及配置SSL证书问题，所以需要修改一下源代码，即[init.js](./BackEnd/src/init.js)文件。
+* 因为里面涉及数据库密码及配置SSL证书问题，所以需要修改一下源代码，即[init.js](https://github.com/biaov/MINEAPP/blob/master/Backend/src/utils/init.js)文件。
 * 如果没有SSL证书，也没有关系，默认为http，及development环境。
 * 数据库默认没有设置密码，如果你的数据有密码，则添加一下你的密码。
 
@@ -109,10 +109,10 @@ mysql -uroot < init.sql
 
 * 你可以直接安装并配置[MySQL](https://www.mysql.com/)。
 * 然后在使用[Navicat Premium](http://www.navicat.com.cn/store/navicat-premium)连接数据库查看。
-* MySQL文件：**[init.sql](./BackEnd/data/init.sql)**
+* MySQL文件：**[init.sql](https://github.com/biaov/MINEAPP/blob/master/Backend/data/init.sql)**
 * MySQL表图片:
 
-<img src="./BackEnd/data/table.png" width="50%" alt="数据库表" title="数据库表">
+<a href="https://github.com/biaov/MINEAPP/blob/master/Backend/data/table.png"><img src="https://github.com/biaov/MINEAPP/blob/master/Backend/data/table.png" width="50%" alt="数据库表" title="数据库表"></a>
 
 ## 演示
 
