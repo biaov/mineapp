@@ -3,4 +3,4 @@
  * Date 2020-03-05
  */
 require("./utils");
-require("./interface");
+require("./router");

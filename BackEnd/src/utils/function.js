@@ -3,7 +3,7 @@
  * Date 2020-03-05
  */
 
-(function(global) {
+(function (global) {
   const path = require("path"); // 引入路径模块
   const { PublicPath, NO } = require("./variable"); // 引入全局变量
   const crypto = require("crypto"); // 引入crypto模块
@@ -27,7 +27,7 @@
     m = m < 10 ? "0" + m : m;
     s = s < 10 ? "0" + s : s;
     return Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s;
-  }
+  };
 
   /**
    * POST请求接收参数
@@ -46,7 +46,7 @@
         resolve(JSON.parse(data));
       });
     });
-  }
+  };
 
   /**
    * 加密,解密
@@ -57,7 +57,8 @@
    */
   const AseEnDecode = (data, type = false, password = "123456") => {
     // 判断是加密还是解密，type：true为解密，false为加密
-    if (!type) { // 加密
+    if (!type) {
+      // 加密
       if (Object.prototype.toString.call(data) !== "[object Object]") throw new Error(data + "is not Object");
       data = JSON.stringify(data);
       // 创建cipher对象
@@ -66,7 +67,8 @@
       let crypted = cipher.update(data, "utf-8", "hex");
       crypted += cipher.final("hex");
       return crypted.toString();
-    } else { // 解密
+    } else {
+      // 解密
       if (Object.prototype.toString.call(data) !== "[object String]") throw new Error(data + "is not String");
       // 创建 decipher对象
       const decipher = crypto.createDecipher("aes192", password);
@@ -75,7 +77,7 @@
       decrypted += decipher.final("utf-8");
       return JSON.parse(decrypted);
     }
-  }
+  };
 
   /**
    * 获取随机默认头像
@@ -84,7 +86,7 @@
   const RandomAvatar = () => {
     const randomNum = Math.ceil(Math.random() * (8 - 1)) + 1;
     return PublicPath + "images/avatar/default/" + randomNum + ".png";
-  }
+  };
 
   /**
    * 分页参数转化成数字
@@ -101,7 +103,7 @@
     } else {
       throw new Error(`${defaultNum} is not number`);
     }
-  }
+  };
 
   /**
    * 验证token是否正确
@@ -127,14 +129,7 @@
         TokenError(res);
       }
     });
-  }
-
-  /**
-   * 设置require src路径
-   * @param {String} url - src下的路径
-   * @returns {Any} - 引入的模块
-   */
-  const Require = url => require(path.resolve(process.cwd(), "src/" + url));
+  };
 
   /**
    * 返回响应JSON数据
@@ -159,7 +154,7 @@
       value[key] = obj[key];
     }
     return value;
-  }
+  };
   global.$api = {
     Format, // 时间转换
     PostArg, // POST请求接收参数
@@ -167,8 +162,7 @@
     RandomAvatar, // 获取随机默认头像
     ConvertNum, // 分页参数转化成数字
     VerifyToken, // token验证
-    Require, // 设置require src路径
     ReturnJson, // 返回响应JSON数据
     SaveValidData // 保存验证对象数据
-  }
+  };
 })(global);

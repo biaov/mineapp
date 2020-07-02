@@ -10,4 +10,4 @@ const NotFounds = require("./notFound"); // 404中间件
 /**
  * 使用扩展运算符，不会存在命名冲突
  */
-module.exports = { ...ErrorHandles, ...NotFounds }
+module.exports = { ...ErrorHandles, ...NotFounds };

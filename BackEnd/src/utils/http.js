@@ -7,4 +7,4 @@ let server = http.createServer(app);
 module.exports = {
   server,
   app
-}
+};

@@ -19,14 +19,16 @@ server.listen(3100); // 监听3100端口
 app.use(cors()); // 处理跨域问题
 
 // 使用session
-app.use(session({
-  secret: "secret", // 可以随便写。 一个 String 类型的字符串，作为服务器端生成 session 的签名
-  cookie: {
-    maxAge: 1000 * 60 * 3 // 过期时间
-  },
-  resave: false, // 强制保存 session 即使它并没有变化,。默认为 true。建议设置成 false。
-  saveUninitialized: true // 强制将未初始化的 session 存储。  默认值是true  建议设置成true
-}));
+app.use(
+  session({
+    secret: "secret", // 可以随便写。 一个 String 类型的字符串，作为服务器端生成 session 的签名
+    cookie: {
+      maxAge: 1000 * 60 * 3 // 过期时间
+    },
+    resave: false, // 强制保存 session 即使它并没有变化,。默认为 true。建议设置成 false。
+    saveUninitialized: true // 强制将未初始化的 session 存储。  默认值是true  建议设置成true
+  })
+);
 
 app.use("/api", router); // 使用路由中间件
 
@@ -47,4 +49,4 @@ module.exports = {
   fs, // 读取文件模块
   multiparty, // form-data模块对象
   RandomName // 随机名模块对象
-}
+};

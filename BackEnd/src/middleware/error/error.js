@@ -16,8 +16,7 @@ const ErrorHandle = (error, req, res, next) => {
   } else {
     next();
   }
-}
-
+};
 
 module.exports = {
   ErrorHandle // 程序运行错误处理

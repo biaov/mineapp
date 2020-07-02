@@ -1,12 +1,12 @@
 {
   "name": "mineapp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is simple mineapp!",
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev":"nodemon src -w",
-    "serve": "pm2 start src --watch -n mineapp",
+    "dev": "nodemon src -w",
+    "serve": "pm2 start src -n mineapp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,7 +22,9 @@
     "express-session": "^1.17.0",
     "http": "0.0.0",
     "https": "^1.0.0",
+    "module-alias": "^2.2.2",
     "multiparty": "^4.2.1",
     "mysql": "^2.18.1"
-  }
+  },
+  "devDependencies": {}
 }

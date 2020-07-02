@@ -14,7 +14,7 @@ const { NoFoundCode } = $api.Require("utils");
  */
 const NoFound = (req, res, next) => {
   $api.ReturnJson(res, { code: NoFoundCode, msg: "API接口路径或请求方法错误", data: null });
-}
+};
 
 module.exports = {
   NoFound // 404错误处理
