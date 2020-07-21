@@ -51,7 +51,7 @@ CREATE TABLE ma_details_question(
 INSERT INTO
   ma_details_question(dqid, title, createTime, content)
 VALUES
-(NULL, "我的问题", "2020-4-7 10:32", "这就是我的答案");
+  (NULL, "我的问题", "2020-4-7 10:32", "这就是我的答案");
 
 # 公告详情
 CREATE TABLE ma_details_notice(
@@ -215,4 +215,24 @@ VALUES
   (
     NULL,
     "https://app.biaov.cn/mineapp/images/picture/1.png"
+  );
+
+/*
+ * MINEAPP信息
+ */
+# 信息表
+CREATE TABLE ma_details_mineapp(
+  dmid INT PRIMARY KEY AUTO_INCREMENT,
+  # 防止 version 是关键字
+  `version` VARCHAR(16),
+  downUrl VARCHAR(64)
+);
+
+INSERT INTO
+  ma_details_mineapp(dmid, `version`, downUrl)
+VALUES
+  (
+    NULL,
+    "1.0.1",
+    "http://app.biaov.cn/mineapp/update/update.wgt"
   );

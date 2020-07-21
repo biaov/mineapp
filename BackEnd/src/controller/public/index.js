@@ -10,13 +10,10 @@ const imgPath = "images/upload/";
  * @returns {Void}
  */
 const CoVersionInfo = (req, res) => {
-  $api.ReturnJson(res, {
-    code: YES,
-    msg: "查询成功",
-    data: {
-      version: "1.0.1",
-      downUrl: PublicPath + "update/update.wgt"
-    }
+  const sql = "SELECT version,downUrl from ma_details_mineapp";
+  pool.query(sql, (error, result) => {
+    if (error) throw error;
+    $api.ReturnJson(res, { code: YES, msg: "查询成功", data: result[0] });
   });
 };
 /**
