@@ -85,7 +85,7 @@
    */
   const RandomAvatar = () => {
     const randomNum = Math.ceil(Math.random() * (8 - 1)) + 1;
-    return PublicPath + "images/avatar/default/" + randomNum + ".png";
+    return PublicPath + "images/avatar/" + randomNum + ".png";
   };
 
   /**
