@@ -70,7 +70,7 @@ const CoUploadImg = (req, res) => {
  * @returns {Void}
  */
 const CoNoticeList = (req, res) => {
-  let sql = "SELECT dnid,title,createTime FROM ma_details_notice";
+  let sql = "SELECT dnid,title,createTime FROM ma_details_notice ORDER BY dnid DESC";
   pool.query(sql, (error, result) => {
     if (error) throw error;
     // 判断数据是否为空
