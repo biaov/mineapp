@@ -203,18 +203,18 @@
       "pagePath": "pages/index/index",
       "text": "首页"
     }, {
-      "iconPath": "/static/icon_nav0201.png",
-      "selectedIconPath": "./static/icon_nav0202.png",
+      "iconPath": "static/icon_nav0201.png",
+      "selectedIconPath": "static/icon_nav0202.png",
       "pagePath": "pages/special/index",
       "text": "特效"
     }, {
-      "iconPath": "/static/icon_nav0301.png",
-      "selectedIconPath": "./static/icon_nav0302.png",
+      "iconPath": "static/icon_nav0301.png",
+      "selectedIconPath": "static/icon_nav0302.png",
       "pagePath": "pages/imgtxt/index",
       "text": "图文"
     }, {
-      "iconPath": "/static/icon_nav0401.png",
-      "selectedIconPath": "./static/icon_nav0402.png",
+      "iconPath": "static/icon_nav0401.png",
+      "selectedIconPath": "static/icon_nav0402.png",
       "pagePath": "pages/user/index",
       "text": "我的"
     }]
