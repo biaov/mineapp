@@ -8,20 +8,19 @@
 export default {
   data() {
     return {
-      href: "", // 链接地址
+      href: '', // 链接地址
       // 进度条样式
       webviewStyles: {
         progress: {
-          color: "#f60"
+          color: '#f60'
         }
       }
-    };
+    }
   },
-  onLoad({data}) {
-    this.href = data;
+  onLoad({ data }) {
+    this.href = data
   },
   methods: {}
-};
+}
 </script>
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

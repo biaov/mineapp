@@ -1,12 +1,12 @@
 <template>
-  <view class="m-progress" :style="'height:'+height+'rpx;background:'+bgc+';'" :class="animation?'animation':''">
-    <text :style="'transform: translateX(-'+(100-progress)+'%); height:'+height+'rpx;'"></text>
-    <text :style="'transform: translateX(-'+(100-person.pro)+'%); height:'+height+'rpx; background:'+person.bgc+';'"></text>
+  <view class="m-progress" :style="'height:' + height + 'rpx;background:' + bgc + ';'" :class="animation ? 'animation' : ''">
+    <text :style="'transform: translateX(-' + (100 - progress) + '%); height:' + height + 'rpx;'"></text>
+    <text :style="'transform: translateX(-' + (100 - person.pro) + '%); height:' + height + 'rpx; background:' + person.bgc + ';'"></text>
   </view>
 </template>
 <script>
 export default {
-  name: "MineProgress",
+  name: 'MineProgress',
   props: {
     // 高度
     height: {
@@ -16,7 +16,7 @@ export default {
     // 背景色
     bgc: {
       type: String,
-      default: "#c9c9c9"
+      default: '#c9c9c9'
     },
     // 一级进度条
     progress: {
@@ -29,8 +29,8 @@ export default {
       default() {
         return {
           pro: 0,
-          bgc: ""
-        };
+          bgc: ''
+        }
       }
     },
     // 动画
@@ -40,11 +40,11 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {}
-};
+}
 </script>
 <style scoped lang="scss">
 .m-progress {
@@ -70,7 +70,7 @@ export default {
       background: #31d441;
     }
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       bottom: 0;

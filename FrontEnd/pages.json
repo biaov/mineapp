@@ -1,22 +1,26 @@
 {
-  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     /* 主页面 start */
     {
       "path": "pages/index/index",
       "style": {
         "navigationBarTitleText": "首页"
       }
-    }, {
+    },
+    {
       "path": "pages/special/index",
       "style": {
         "navigationBarTitleText": "特效"
       }
-    }, {
+    },
+    {
       "path": "pages/imgtxt/index",
       "style": {
         "navigationBarTitleText": "图文"
       }
-    }, {
+    },
+    {
       "path": "pages/user/index",
       "style": {
         "navigationBarTitleText": "我的",
@@ -55,57 +59,68 @@
       "style": {
         "navigationBarTitleText": "关于MINEAPP"
       }
-    }, {
+    },
+    {
       "path": "pages/user/editPwd",
       "style": {
         "navigationBarTitleText": "修改密码"
       }
-    }, {
+    },
+    {
       "path": "pages/user/feedback",
       "style": {
         "navigationBarTitleText": "我的反馈"
       }
-    }, {
+    },
+    {
       "path": "pages/user/feedbackDetails",
       "style": {
         "navigationBarTitleText": "反馈详情"
       }
-    }, {
+    },
+    {
       "path": "pages/user/feedbackNeed",
       "style": {
         "navigationBarTitleText": "我要反馈"
       }
-    }, {
+    },
+    {
       "path": "pages/user/mineapp",
       "style": {
         "navigationBarTitleText": "MINEAPP"
       }
-    }, {
+    },
+    {
       "path": "pages/user/nickname",
       "style": {
         "navigationBarTitleText": "昵称"
       }
-    }, {
+    },
+    {
       "path": "pages/user/noteDetails",
       "style": {
         "navigationBarTitleText": "笔记详情"
       }
-    }, {
+    },
+    {
       "path": "pages/user/noteEdit",
       "style": {
         "navigationBarTitleText": "写笔记"
       }
-    }, {
+    },
+    {
       "path": "pages/user/noteList",
       "style": {
         "navigationBarTitleText": "笔记列表"
       }
-    }, {
+    },
+    {
       "path": "pages/user/setting",
       "style": {
         "navigationBarTitleText": "我的设置"
       }
-    }, {
+    },
+    {
       "path": "pages/user/signature",
       "style": {
         "navigationBarTitleText": "个性签名"
@@ -118,12 +133,14 @@
       "style": {
         "navigationBarTitleText": "微信授权"
       }
-    }, {
+    },
+    {
       "path": "pages/function/index",
       "style": {
         "navigationBarTitleText": "功能中心"
       }
-    }, {
+    },
+    {
       "path": "pages/function/picture",
       "style": {
         "navigationBarTitleText": "图片"
@@ -136,17 +153,20 @@
       "style": {
         "navigationBarTitleText": "帮助中心"
       }
-    }, {
+    },
+    {
       "path": "pages/public/helpDetails",
       "style": {
         "navigationBarTitleText": "" // 帮助中心详情
       }
-    }, {
+    },
+    {
       "path": "pages/public/noticeDetails",
       "style": {
         "navigationBarTitleText": "公告详情"
       }
-    }, {
+    },
+    {
       "path": "pages/public/noticeList",
       "style": {
         "navigationBarTitleText": "公告列表"
@@ -159,23 +179,25 @@
       "style": {
         "navigationBarTitleText": "" // 用户协议、隐私条款
       }
-    }, {
+    },
+    {
       "path": "pages/admin/forget",
       "style": {
         "navigationBarTitleText": "忘记密码"
       }
-    }, {
+    },
+    {
       "path": "pages/admin/login",
       "style": {
-        "navigationBarTitleText": "登录"
-          // #ifdef APP-PLUS
-          ,
+        // #ifdef APP-PLUS
         "app-plus": {
           "animationType": "slide-in-bottom"
-        }
+        },
         // #endif
+        "navigationBarTitleText": "登录"
       }
-    }, {
+    },
+    {
       "path": "pages/admin/register",
       "style": {
         "navigationBarTitleText": "注册"
@@ -197,26 +219,31 @@
     "borderStyle": "#f2f2f2",
     // #endif
     "backgroundColor": "#fff",
-    "list": [{
-      "iconPath": "static/icon_nav0101.png",
-      "selectedIconPath": "static/icon_nav0102.png",
-      "pagePath": "pages/index/index",
-      "text": "首页"
-    }, {
-      "iconPath": "static/icon_nav0201.png",
-      "selectedIconPath": "static/icon_nav0202.png",
-      "pagePath": "pages/special/index",
-      "text": "特效"
-    }, {
-      "iconPath": "static/icon_nav0301.png",
-      "selectedIconPath": "static/icon_nav0302.png",
-      "pagePath": "pages/imgtxt/index",
-      "text": "图文"
-    }, {
-      "iconPath": "static/icon_nav0401.png",
-      "selectedIconPath": "static/icon_nav0402.png",
-      "pagePath": "pages/user/index",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "iconPath": "static/icon_nav0101.png",
+        "selectedIconPath": "static/icon_nav0102.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "static/icon_nav0201.png",
+        "selectedIconPath": "static/icon_nav0202.png",
+        "pagePath": "pages/special/index",
+        "text": "特效"
+      },
+      {
+        "iconPath": "static/icon_nav0301.png",
+        "selectedIconPath": "static/icon_nav0302.png",
+        "pagePath": "pages/imgtxt/index",
+        "text": "图文"
+      },
+      {
+        "iconPath": "static/icon_nav0401.png",
+        "selectedIconPath": "static/icon_nav0402.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }
+    ]
   }
 }

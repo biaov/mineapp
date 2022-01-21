@@ -10,9 +10,9 @@
   </block>
 </template>
 <script>
-import SystemCrash from "@/components/SystemCrash";
+import SystemCrash from '@/components/SystemCrash'
 export default {
-  name: "Layout",
+  name: 'Layout',
   components: {
     SystemCrash
   },
@@ -24,16 +24,15 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {
     // 触发方法
     onRefresh() {
-      this.$emit("on-refresh");
+      this.$emit('on-refresh')
     }
   }
-};
+}
 </script>
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

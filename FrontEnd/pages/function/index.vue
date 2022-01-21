@@ -9,9 +9,9 @@
   </view>
 </template>
 <script>
-import UniGrid from "@/components/UniGrid";
-import UniGridItem from "@/components/UniGrid/UniGridItem";
-import IconText from "@/components/UniGrid/IconText";
+import UniGrid from '@/components/UniGrid'
+import UniGridItem from '@/components/UniGrid/UniGridItem'
+import IconText from '@/components/UniGrid/IconText'
 export default {
   components: {
     UniGrid,
@@ -23,27 +23,27 @@ export default {
       // 列表数据
       listData: [
         {
-          icon: "icon-scan",
-          iconColor: "#01296f",
-          text: "扫一扫"
+          icon: 'icon-scan',
+          iconColor: '#01296f',
+          text: '扫一扫'
         },
         {
-          icon: "icon-jieping",
-          iconColor: "#a86dff",
-          text: "截屏分享"
+          icon: 'icon-jieping',
+          iconColor: '#a86dff',
+          text: '截屏分享'
         },
         {
-          icon: "icon-address",
-          iconColor: "#56bcd6",
-          text: "我的地址"
+          icon: 'icon-address',
+          iconColor: '#56bcd6',
+          text: '我的地址'
         },
         {
-          icon: "icon-shouquan",
-          iconColor: "#ed7120",
-          text: "微信授权"
+          icon: 'icon-shouquan',
+          iconColor: '#ed7120',
+          text: '微信授权'
         }
       ]
-    };
+    }
   },
   onLoad() {},
   methods: {
@@ -52,85 +52,84 @@ export default {
       // 条件判断点击第几个块
       switch (e.detail.index) {
         case 0:
-          this.onScan();
-          break;
+          this.onScan()
+          break
         case 1:
-          this.onScreenshots();
-          break;
+          this.onScreenshots()
+          break
         case 2:
-          this.onAddress();
-          break;
+          this.onAddress()
+          break
         case 3:
-          this.onAuthorize();
-          break;
+          this.onAuthorize()
+          break
       }
     },
     // 点击扫一扫
     onScan() {
       const {
         $api: { ShowModal }
-      } = this;
+      } = this
       // #ifdef H5
-      ShowModal("此功能只有非H5端才能用");
+      ShowModal('此功能只有非H5端才能用')
       // #endif
       // #ifndef H5
       uni.scanCode({
         success: ({ result }) => {
-          ShowModal(result);
+          ShowModal(result)
         }
-      });
+      })
       // #endif
     },
     // 点击截屏分享
     onScreenshots() {
       const {
         $api: { ShowModal, DrawScreen, ShowActionSheet, Msg }
-      } = this;
+      } = this
       // #ifndef APP-PLUE
-      ShowModal("此功能只有APP端才能用");
+      ShowModal('此功能只有APP端才能用')
       // #endif
       // #ifdef APP-PLUE
       DrawScreen().then(imageUrl => {
-        ShowActionSheet(["分享给朋友", "分享到朋友圈"]).then(index => {
-          let scene = index === 0 ? "WXSceneSession" : "WXSenceTimeline";
+        ShowActionSheet(['分享给朋友', '分享到朋友圈']).then(index => {
+          let scene = index === 0 ? 'WXSceneSession' : 'WXSenceTimeline'
           // 分享图片
           uni.share({
-            provider: "weixin",
+            provider: 'weixin',
             type: 2,
             scene,
             imageUrl,
             success: data => {
-              Msg("分享成功");
+              Msg('分享成功')
             },
             error: error => {
-              Msg("分享失败");
+              Msg('分享失败')
             }
-          });
-        });
-      });
+          })
+        })
+      })
       // #endif
     },
     // 我的地址
     onAddress() {
-      this.$api.Msg("暂未开放");
+      this.$api.Msg('暂未开放')
     },
     // 微信授权
     onAuthorize() {
-      const { $api, navTo } = this;
+      const { $api, navTo } = this
       // #ifndef MP-WEIXIN
-      $api.ShowModal("此功能只有微信小程序端才能用");
+      $api.ShowModal('此功能只有微信小程序端才能用')
       // #endif
       // #ifdef MP-WEIXIN
       uni.getSetting({
-        success: ({ authSetting }) => {
-          // 跳转到指定页面
-          navTo(`/pages/function/authorize?data=${Object.keys(authSetting).length !== 0 && authSetting["scope.userInfo"]}`);
+        success: () => {
+          navTo(`/pages/function/authorize`)
         }
-      });
+      })
       // #endif
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-function {

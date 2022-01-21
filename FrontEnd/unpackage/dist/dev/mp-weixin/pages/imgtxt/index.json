@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "图文",
+  "usingComponents": {
+    "layout": "/components/Layout/index",
+    "no-data": "/components/NoData/index",
+    "load-more": "/components/LoadMore/index"
+  }
+}

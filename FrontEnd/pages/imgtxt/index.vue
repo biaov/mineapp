@@ -2,17 +2,17 @@
   <!-- 图文 -->
   <view class="m-imgtext">
     <Layout @on-refresh="loadData" :state="systemCrashState">
-      <no-data v-if="listData.length===0"></no-data>
+      <no-data v-if="listData.length === 0"></no-data>
       <block v-else>
         <view class="m-list-article">
-          <block v-for="(item,index) in listData" :key="index">
-            <view :class="index===0?'u-first':'u-li'" @tap="navTo(`/pages/imgtxt/details?data=${item.daid}`)">
+          <block v-for="(item, index) in listData" :key="index">
+            <view :class="index === 0 ? 'u-first' : 'u-li'" @tap="navTo(`/pages/imgtxt/details?data=${item.daid}`)">
               <view class="u-img">
                 <image :src="item.src" mode="widthFix"></image>
               </view>
               <view class="u-text">
-                <view class="u-tit">{{item.title}}</view>
-                <view class="u-time">{{item.createTime}}</view>
+                <view class="u-tit">{{ item.title }}</view>
+                <view class="u-time">{{ item.createTime }}</view>
               </view>
             </view>
           </block>
@@ -23,11 +23,11 @@
   </view>
 </template>
 <script>
-import Layout from "@/components/Layout";
-import NoData from "@/components/NoData";
-import LoadMore from "@/components/LoadMore";
-import { GetArticleList } from "@/api/imgtxt";
-const SIZE = 10;
+import Layout from '@/components/Layout'
+import NoData from '@/components/NoData'
+import LoadMore from '@/components/LoadMore'
+import { GetArticleList } from '@/api/imgtxt'
+const SIZE = 10
 export default {
   components: {
     Layout,
@@ -37,19 +37,19 @@ export default {
   data() {
     return {
       systemCrashState: true, // 系统崩溃状态
-      loadingType: "more", // 加载状态
+      loadingType: 'more', // 加载状态
       // 列表数据
       listData: []
-    };
+    }
   },
   onLoad() {
-    this.loadData();
+    this.loadData()
   },
   onReachBottom() {
-    const { loadingType, loadData, listData } = this;
-    if (loadingType == "more") {
-      loadingType = "loading";
-      loadData(listData.length / SIZE + 1); // 加载数据
+    const { loadingType, loadData, listData } = this
+    if (loadingType == 'more') {
+      loadingType = 'loading'
+      loadData(listData.length / SIZE + 1) // 加载数据
     }
   },
   methods: {
@@ -57,16 +57,16 @@ export default {
     loadData(current = 1) {
       // 请求后台
       GetArticleList({ current, count: SIZE }).then(res => {
-        const { $api, listData } = this;
+        const { $api, listData } = this
         $api.RequestMsg(res, false).then(({ list }) => {
-          this.systemCrashState = false;
-          this.listData = current === 1 ? list : [...listData, ...list]; // 设置列表数据
-          this.loadingType = list.length < SIZE ? "nomore" : "more";
-        });
-      });
+          this.systemCrashState = false
+          this.listData = current === 1 ? list : [...listData, ...list] // 设置列表数据
+          this.loadingType = list.length < SIZE ? 'nomore' : 'more'
+        })
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 $first-color: #fff;

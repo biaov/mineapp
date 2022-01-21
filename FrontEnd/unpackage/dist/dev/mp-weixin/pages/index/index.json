@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "layout": "/components/Layout/index",
+    "slider-bar": "/components/SliderBar/index",
+    "notice-roll": "/components/NoticeRoll/index",
+    "list-articel": "/components/ListCell/article",
+    "no-data": "/components/NoData/index"
+  }
+}

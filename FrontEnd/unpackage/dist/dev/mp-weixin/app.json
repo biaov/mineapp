@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/special/index",
+    "pages/imgtxt/index",
+    "pages/user/index",
+    "pages/index/hot",
+    "pages/special/details",
+    "pages/imgtxt/details",
+    "pages/user/aboutUs",
+    "pages/user/editPwd",
+    "pages/user/feedback",
+    "pages/user/feedbackDetails",
+    "pages/user/feedbackNeed",
+    "pages/user/mineapp",
+    "pages/user/nickname",
+    "pages/user/noteDetails",
+    "pages/user/noteEdit",
+    "pages/user/noteList",
+    "pages/user/setting",
+    "pages/user/signature",
+    "pages/function/authorize",
+    "pages/function/index",
+    "pages/function/picture",
+    "pages/public/help",
+    "pages/public/helpDetails",
+    "pages/public/noticeDetails",
+    "pages/public/noticeList",
+    "pages/admin/agreement",
+    "pages/admin/forget",
+    "pages/admin/login",
+    "pages/admin/register"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "MINEAPP",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#949494",
+    "selectedColor": "#ff6600",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "iconPath": "static/icon_nav0101.png",
+        "selectedIconPath": "static/icon_nav0102.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "static/icon_nav0201.png",
+        "selectedIconPath": "static/icon_nav0202.png",
+        "pagePath": "pages/special/index",
+        "text": "特效"
+      },
+      {
+        "iconPath": "static/icon_nav0301.png",
+        "selectedIconPath": "static/icon_nav0302.png",
+        "pagePath": "pages/imgtxt/index",
+        "text": "图文"
+      },
+      {
+        "iconPath": "static/icon_nav0401.png",
+        "selectedIconPath": "static/icon_nav0402.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

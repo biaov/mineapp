@@ -8,9 +8,9 @@
   </view>
 </template>
 <script>
-import InputBox from "@/components/InputBox";
-import VerifyCode from "@/components/InputBox/VerifyCode";
-import { GoEditPwd } from "@/api/user";
+import InputBox from '@/components/InputBox'
+import VerifyCode from '@/components/InputBox/VerifyCode'
+import { GoEditPwd } from '@/api/user'
 export default {
   components: {
     InputBox,
@@ -20,11 +20,11 @@ export default {
     return {
       // 表单信息
       form: {
-        opassword: "", // 原密码
-        password: "", // 新密码
-        cpassword: "" // 确认密码
+        opassword: '', // 原密码
+        password: '', // 新密码
+        cpassword: '' // 确认密码
       }
-    };
+    }
   },
   onLoad() {},
   methods: {
@@ -35,33 +35,33 @@ export default {
         returnBack,
         $var: { PwdReg },
         $api: { Msg, Loading, RequestMsg }
-      } = this;
-      const { opassword, password, cpassword } = form; // form表单
+      } = this
+      const { opassword, password, cpassword } = form // form表单
       if (!PwdReg.test(opassword)) {
         // 原密码校验
-        Msg("原密码格式错误");
+        Msg('原密码格式错误')
       } else if (!PwdReg.test(password)) {
         // 新密码校验
-        Msg("新密码格式错误");
+        Msg('新密码格式错误')
       } else if (cpassword !== password) {
         // 重复密码校验
-        Msg("两次密码不一致");
+        Msg('两次密码不一致')
       } else {
-        Loading();
+        Loading()
         // 请求后台
         GoEditPwd(form).then(res => {
           RequestMsg(res).then(res => {
-            Msg("修改密码成功");
+            Msg('修改密码成功')
             // 延迟返回
             setTimeout(() => {
-              returnBack();
-            }, 500);
-          });
-        });
+              returnBack()
+            }, 500)
+          })
+        })
       }
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-edit-pwd {

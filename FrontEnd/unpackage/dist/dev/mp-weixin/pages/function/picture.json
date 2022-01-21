@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "图片",
+  "usingComponents": {
+    "layout": "/components/Layout/index",
+    "list-picture": "/components/ListCell/picture",
+    "no-data": "/components/NoData/index",
+    "load-more": "/components/LoadMore/index"
+  }
+}

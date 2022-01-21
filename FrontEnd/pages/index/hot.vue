@@ -12,13 +12,13 @@
   </view>
 </template>
 <script>
-import Layout from "@/components/Layout";
-import ListArticel from "@/components/ListCell/article";
-import ListPicture from "@/components/ListCell/picture";
-import { GetSpecialList } from "@/api/special";
-import { GetArticleList } from "@/api/imgtxt";
-import { ImgPreview } from "@/api/function";
-const SIZE = 2;
+import Layout from '@/components/Layout'
+import ListArticel from '@/components/ListCell/article'
+import ListPicture from '@/components/ListCell/picture'
+import { GetSpecialList } from '@/api/special'
+import { GetArticleList } from '@/api/imgtxt'
+import { ImgPreview } from '@/api/function'
+const SIZE = 2
 export default {
   components: {
     Layout,
@@ -34,10 +34,10 @@ export default {
       articleList: [],
       // 图片数据
       pictureList: []
-    };
+    }
   },
   onLoad() {
-    this.loadData();
+    this.loadData()
   },
   methods: {
     // 加载页面数据
@@ -45,25 +45,25 @@ export default {
       // 加载特效列表最新数据
       GetSpecialList({ current, count: SIZE }).then(res => {
         this.$api.RequestMsg(res, false).then(({ list }) => {
-          this.systemCrashState = false;
-          this.specialList = list;
-        });
-      });
+          this.systemCrashState = false
+          this.specialList = list
+        })
+      })
       // 加载文章信息
       GetArticleList({ current, count: SIZE }).then(res => {
         this.$api.RequestMsg(res, false).then(({ list }) => {
-          this.articleList = list;
-        });
-      });
+          this.articleList = list
+        })
+      })
       // 加载图片数据
       ImgPreview({ current, count: SIZE * 2 }).then(res => {
         this.$api.RequestMsg(res, false).then(({ list }) => {
-          this.pictureList = list;
-        });
-      });
+          this.pictureList = list
+        })
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-hot {

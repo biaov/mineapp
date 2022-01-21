@@ -1,18 +1,18 @@
 <template>
   <!-- 笔记列表 -->
   <view class="m-list-note">
-    <view v-for="(item,index) in list" :key="index" @tap="handleLi(item)">
+    <view v-for="(item, index) in list" :key="index" @tap="handleLi(item)">
       <view class="u-lf">
-        <view class="u-tit">{{item.title}}</view>
-        <view class="u-time">{{item.createTime}}</view>
+        <view class="u-tit">{{ item.title }}</view>
+        <view class="u-time">{{ item.createTime }}</view>
       </view>
-      <view class="u-rt"><text class="iconfont" :class="item.state?'icon-dui':'icon-weibiaoti38'" v-if="isShowDelete"></text></view>
+      <view class="u-rt"><text class="iconfont" :class="item.state ? 'icon-dui' : 'icon-weibiaoti38'" v-if="isShowDelete"></text></view>
     </view>
   </view>
 </template>
 <script>
 export default {
-  name: "ListNote",
+  name: 'ListNote',
   props: {
     // 列表数据
     list: {
@@ -22,7 +22,7 @@ export default {
     // 跳转地址
     url: {
       type: String,
-      default: ""
+      default: ''
     },
     // 是否显示删除
     isShowDelete: {
@@ -32,27 +32,27 @@ export default {
     // id类型名称
     idName: {
       type: String,
-      default: "dnid"
+      default: 'dnid'
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {
     // 点击列表
     handleLi(item) {
-      const { url, isShowDelete, idName } = this;
+      const { url, isShowDelete, idName } = this
       // 判断是否显示删除
       if (isShowDelete) {
-        item.state = !item.state;
+        item.state = !item.state
       } else if (!!url) {
         // 判断是否允许跳转，默认不传不跳转
-        this.navTo(`${url}?data=${item[idName]}`);
+        this.navTo(`${url}?data=${item[idName]}`)
       }
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-list-note {

@@ -1,0 +1,1 @@
+<block wx:if="{{isMask}}"><view class="{{['m-mask','data-v-0b81e024',isShowMask?'show':'']}}"><view class="m-picker data-v-0b81e024"><view class="u-tit data-v-0b81e024">{{title}}</view><mine-progress vue-id="4da36ed8-1" progress="{{progress}}" class="data-v-0b81e024" bind:__l="__l"></mine-progress><view class="u-txt data-v-0b81e024">{{progress+"%"}}</view></view></view></block>

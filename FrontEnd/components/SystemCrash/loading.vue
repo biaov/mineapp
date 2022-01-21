@@ -1,14 +1,14 @@
 <template>
   <!-- 加载框 -->
   <view class="m-loading">
-    <text class="iconfont icon-Loading" :class="state?'rotate':''"></text>
-    <text class="iconfont icon-Loading" :class="state?'rotate2':''"></text>
-    <text class="iconfont icon-Loading" :class="state?'rotate':''"></text>
+    <text class="iconfont icon-Loading" :class="state ? 'rotate' : ''"></text>
+    <text class="iconfont icon-Loading" :class="state ? 'rotate2' : ''"></text>
+    <text class="iconfont icon-Loading" :class="state ? 'rotate' : ''"></text>
   </view>
 </template>
 <script>
 export default {
-  name: "Loading",
+  name: 'Loading',
   props: {
     // 加载状态
     state: {
@@ -17,18 +17,18 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {},
   mounted() {
     if (this.state) {
       setTimeout(() => {
-        this.$emit("on-change", false);
-      }, 3000);
+        this.$emit('on-change', false)
+      }, 3000)
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-loading {

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#f2f2f2",
+  "usingComponents": {
+    "list-cell": "/components/ListCell/index",
+    "uni-grid": "/components/UniGrid/index",
+    "uni-grid-item": "/components/UniGrid/UniGridItem",
+    "icon-text": "/components/UniGrid/IconText"
+  }
+}

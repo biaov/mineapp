@@ -3,14 +3,14 @@
   <view class="m-notice">
     <text class="iconfont icon-notice u-icon-lf"></text>
     <view class="u-text" @tap="onDetails(0)">
-      <text class="u-notice">{{title}}</text>
+      <text class="u-notice">{{ title }}</text>
     </view>
     <text class="iconfont icon-right u-icon-rt" @tap="onDetails(1)"></text>
   </view>
 </template>
 <script>
 export default {
-  name:"NoticeRoll",
+  name: 'NoticeRoll',
   props: {
     // 标题
     title: {
@@ -24,7 +24,7 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {
@@ -32,14 +32,14 @@ export default {
     onDetails(num) {
       // 判断有无公告
       if (this.dnid === 0) {
-        this.$api.Msg("暂无公告");
+        this.$api.Msg('暂无公告')
       } else {
-        const url = num === 1 ? `/pages/public/noticeList` : `/pages/public/noticeDetails?data=${this.dnid}`;
-        this.navTo(url);
+        const url = num === 1 ? `/pages/public/noticeList` : `/pages/public/noticeDetails?data=${this.dnid}`
+        this.navTo(url)
       }
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-notice {

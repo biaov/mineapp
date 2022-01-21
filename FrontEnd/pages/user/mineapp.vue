@@ -16,23 +16,23 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {
     // 点击下载按钮
     onBtn(type) {
-      const { H5Url, DownUrl } = this.$var;
-      let url = type === "APP" ? DownUrl : H5Url;
+      const { H5Url, DownUrl } = this.$var
+      let url = type === 'APP' ? DownUrl : H5Url
       // #ifndef APP-PLUS
-      window.location.href = url;
+      window.location.href = url
       // #endif
       // #ifdef APP-PLUS
-      plus.runtime.openURL(url);
+      plus.runtime.openURL(url)
       // #endif
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-mine-app {

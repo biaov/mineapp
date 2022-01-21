@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "图文详情",
+  "usingComponents": {
+    "layout": "/components/Layout/index"
+  }
+}

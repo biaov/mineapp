@@ -10,9 +10,9 @@
   </view>
 </template>
 <script>
-import Loading from "./loading";
+import Loading from './loading'
 export default {
-  name: "SystemCrash",
+  name: 'SystemCrash',
   components: {
     Loading
   },
@@ -20,26 +20,26 @@ export default {
     return {
       isShow: false, // 是否显示该页面
       isShowRefresh: false // 是否显示刷新
-    };
+    }
   },
   onLoad() {},
   methods: {
     // 点击刷新按钮
     onRefresh() {
-      this.isShowRefresh = true;
-      this.$emit("on-refresh");
+      this.isShowRefresh = true
+      this.$emit('on-refresh')
     },
     // 当页面加载一段时间后
     onChange(bool) {
-      this.isShowRefresh = bool;
+      this.isShowRefresh = bool
     }
   },
   mounted() {
     setTimeout(() => {
-      this.isShow = true;
-    }, 500);
+      this.isShow = true
+    }, 500)
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-system-crash {

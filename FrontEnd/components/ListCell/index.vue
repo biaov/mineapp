@@ -2,13 +2,13 @@
   <!-- 列表 -->
   <view class="m-list-cell" @tap="handleLi">
     <view class="u-lf">
-      <text class="iconfont u-icon" :class="icon" :style="'color:'+iconColor" v-if="!!icon"></text>
+      <text class="iconfont u-icon" :class="icon" :style="'color:' + iconColor" v-if="!!icon"></text>
       <text class="u-tit">
         <slot></slot>
       </text>
     </view>
     <view class="u-rt">
-      <text class="u-subtit" v-if="!!subtit">{{subtit}}</text>
+      <text class="u-subtit" v-if="!!subtit">{{ subtit }}</text>
       <view class="u-avatar" v-else>
         <image :src="avatar" mode="widthFix"></image>
       </view>
@@ -19,34 +19,34 @@
   </view>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
-  name: "ListCell",
+  name: 'ListCell',
   props: {
     // 左边图标
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     // 左边图标颜色
     iconColor: {
       type: String,
-      default: "#f60"
+      default: '#f60'
     },
     // 右侧标题
     subtit: {
       type: String,
-      default: ""
+      default: ''
     },
     // 头像
     avatar: {
       type: String,
-      default: ""
+      default: ''
     },
     // 跳转页面
     url: {
       type: String,
-      default: ""
+      default: ''
     },
     // 是否需要登录
     isNeedSignIn: {
@@ -55,28 +55,28 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   computed: {
-    ...mapState(["isLogin"])
+    ...mapState(['isLogin'])
   },
   methods: {
     // 点击列表
     handleLi() {
-      let url = this.url;
+      let url = this.url
       // 判断是否是否需要跳转
       if (!url) {
-        this.$emit("on-click"); // 自定义点击事件
+        this.$emit('on-click') // 自定义点击事件
       } else if (this.isNeedSignIn && !this.isLogin) {
-        this.navTo("/pages/admin/login");
+        this.navTo('/pages/admin/login')
       } else {
         // 跳转页面
-        this.navTo(url);
+        this.navTo(url)
       }
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-list-cell {

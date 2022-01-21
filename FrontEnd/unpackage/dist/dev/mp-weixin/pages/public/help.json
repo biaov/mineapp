@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "帮助中心",
+  "usingComponents": {
+    "layout": "/components/Layout/index",
+    "no-data": "/components/NoData/index",
+    "list-cell": "/components/ListCell/index",
+    "load-more": "/components/LoadMore/index"
+  }
+}

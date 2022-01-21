@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "system-crash": "/components/SystemCrash/index"
+  }
+}

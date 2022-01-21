@@ -1,0 +1,1 @@
+<block class="data-v-31427208"><block wx:if="{{state}}"><system-crash bind:onRefresh="__e" vue-id="11e76004-1" data-event-opts="{{[['^onRefresh',[['onRefresh']]]]}}" class="data-v-31427208" bind:__l="__l"></system-crash></block><block wx:else><view class="g-wrap data-v-31427208"><slot></slot></view></block></block>

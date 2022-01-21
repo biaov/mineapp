@@ -8,23 +8,7 @@
       <view class="m-info">
         <view>
           <text class="u-label">昵称</text>
-          <text class="u-value">{{authorizeInfo.nickName}}</text>
-        </view>
-        <view>
-          <text class="u-label">性别</text>
-          <text class="u-value">{{authorizeInfo.gender|filterSex}}</text>
-        </view>
-        <view>
-          <text class="u-label">国家</text>
-          <text class="u-value">{{authorizeInfo.country}}</text>
-        </view>
-        <view>
-          <text class="u-label">省份</text>
-          <text class="u-value">{{authorizeInfo.province}}</text>
-        </view>
-        <view>
-          <text class="u-label">城市</text>
-          <text class="u-value">{{authorizeInfo.city}}</text>
+          <text class="u-value">{{ authorizeInfo.nickName }}</text>
         </view>
       </view>
     </block>
@@ -39,56 +23,31 @@
   </view>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions } from 'vuex'
 export default {
   data() {
     return {
       isAuthorized: false // 是否已经授权
-    };
-  },
-  onLoad({ data }) {
-    let flag = JSON.parse(data);
-    this.isAuthorized = flag;
-    // 判断是否已授权
-    flag &&
-      uni.getStorage({
-        key: "authorizeInfo",
-        success: res => {
-          const { data } = res;
-          // 如果本地存在登录信息,则保存登录信息到vuex里去
-          !!data && this.Authorize(data);
-        }
-      });
+    }
   },
   computed: {
-    ...mapState(["authorizeInfo"])
+    ...mapState(['authorizeInfo'])
   },
   methods: {
-    ...mapActions(["Authorize"]),
+    ...mapActions(['Authorize']),
     // 点击授权
     onSubmit(res) {
       // #ifdef MP-WEIXIN
       // 判断是够允许授权
-      const rawData = res.detail.rawData;
+      const rawData = res.detail.rawData
       if (!!rawData) {
-        this.Authorize(JSON.parse(rawData)); // 保存授权信息
-        this.isAuthorized = true;
+        this.Authorize(JSON.parse(rawData)) // 保存授权信息
+        this.isAuthorized = true
       }
       //#endif
     }
-  },
-  filters: {
-    // 过滤性别
-    filterSex(value) {
-      switch (+value) {
-        case 0:
-          return "女";
-        case 1:
-          return "男";
-      }
-    }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-authorize {
@@ -126,7 +85,7 @@ export default {
         color: $common-font-color-reduce;
         font-size: $common-font-size;
         &::after {
-          content: ":";
+          content: ':';
           position: absolute;
           right: -$common-padding/2;
           top: 0;

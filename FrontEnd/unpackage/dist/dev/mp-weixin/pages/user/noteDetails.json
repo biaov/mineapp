@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "笔记详情",
+  "usingComponents": {
+    "layout": "/components/Layout/index"
+  }
+}

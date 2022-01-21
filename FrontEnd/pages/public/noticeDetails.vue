@@ -2,15 +2,15 @@
   <!-- 公告详情 -->
   <view class="m-details">
     <Layout @on-refresh="loadData" :state="systemCrashState">
-      <view class="u-title">{{title}}</view>
-      <view class="u-time">{{time}}</view>
-      <view class="u-content">{{content}}</view>
+      <view class="u-title">{{ title }}</view>
+      <view class="u-time">{{ time }}</view>
+      <view class="u-content">{{ content }}</view>
     </Layout>
   </view>
 </template>
 <script>
-import Layout from "@/components/Layout";
-import { GetNoticeDetails } from "@/api/public";
+import Layout from '@/components/Layout'
+import { GetNoticeDetails } from '@/api/public'
 export default {
   components: {
     Layout
@@ -18,13 +18,13 @@ export default {
   data() {
     return {
       systemCrashState: true, // 系统崩溃状态
-      title: "网络连接出错", // 标题
-      time: "0000-00-00 00:00:00", // 时间
-      content: "你的网络连接出现问题了，请及时处理" // 内容
-    };
+      title: '网络连接出错', // 标题
+      time: '0000-00-00 00:00:00', // 时间
+      content: '你的网络连接出现问题了，请及时处理' // 内容
+    }
   },
   onLoad({ data }) {
-    this.loadData(data);
+    this.loadData(data)
   },
   methods: {
     // 加载页面数据
@@ -32,15 +32,15 @@ export default {
       // 请求后台
       GetNoticeDetails({ id }).then(res => {
         this.$api.RequestMsg(res, false).then(({ title, createTime, content }) => {
-          this.systemCrashState = false;
-          this.title = title;
-          this.time = createTime;
-          this.content = content;
-        });
-      });
+          this.systemCrashState = false
+          this.title = title
+          this.time = createTime
+          this.content = content
+        })
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-details {

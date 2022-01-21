@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "公告列表",
+  "usingComponents": {
+    "layout": "/components/Layout/index",
+    "list-cell": "/components/ListCell/index",
+    "no-data": "/components/NoData/index"
+  }
+}

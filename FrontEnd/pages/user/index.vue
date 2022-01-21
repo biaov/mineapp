@@ -3,7 +3,7 @@
   <view class="m-user">
     <view class="m-hd">
       <view class="u-img" @tap="onAvatar">
-        <image :src="isLogin?avatar:'/static/default_avatar.png'" mode="widthFix"></image>
+        <image :src="isLogin ? avatar : '/static/default_avatar.png'" mode="widthFix"></image>
       </view>
       <view class="u-text">
         <!-- 是否登录 -->
@@ -15,10 +15,10 @@
         </block>
         <block v-else>
           <view class="u-nickname">
-            <text>{{nickname||"--"}}</text>
-            <text class="iconfont" :class="sex===1?'icon-lunkuodasan-1':'icon-lunkuodasan-'"></text>
+            <text>{{ nickname || '--' }}</text>
+            <text class="iconfont" :class="sex === 1 ? 'icon-lunkuodasan-1' : 'icon-lunkuodasan-'"></text>
           </view>
-          <view class="u-signature">个性签名：{{signature||"--"}}</view>
+          <view class="u-signature">个性签名：{{ signature || '--' }}</view>
         </block>
       </view>
     </view>
@@ -41,12 +41,12 @@
   </view>
 </template>
 <script>
-import { mapState } from "vuex";
-import ListCell from "@/components/ListCell";
-import UniGrid from "@/components/UniGrid";
-import UniGridItem from "@/components/UniGrid/UniGridItem";
-import IconText from "@/components/UniGrid/IconText";
-import { GetUserInfo } from "@/api/user";
+import { mapState } from 'vuex'
+import ListCell from '@/components/ListCell'
+import UniGrid from '@/components/UniGrid'
+import UniGridItem from '@/components/UniGrid/UniGridItem'
+import IconText from '@/components/UniGrid/IconText'
+import { GetUserInfo } from '@/api/user'
 export default {
   components: {
     ListCell,
@@ -56,54 +56,54 @@ export default {
   },
   data() {
     return {
-      avatar: "", // 用户头像
-      nickname: "", // 标题
+      avatar: '', // 用户头像
+      nickname: '', // 标题
       sex: 0, // 0:女,1:男
-      signature: "", // 个性签名
+      signature: '', // 个性签名
       // 九宫格
       gridList: [
         {
-          icon: "icon-tiyu-paoku",
-          iconColor: "#01296f",
-          text: "炫酷"
+          icon: 'icon-tiyu-paoku',
+          iconColor: '#01296f',
+          text: '炫酷'
         },
         {
-          icon: "icon-wenzhang",
-          iconColor: "#A86dff",
-          text: "文章"
+          icon: 'icon-wenzhang',
+          iconColor: '#A86dff',
+          text: '文章'
         },
         {
-          icon: "icon-gongneng",
-          iconColor: "#4995ed",
-          text: "功能"
+          icon: 'icon-gongneng',
+          iconColor: '#4995ed',
+          text: '功能'
         }
       ]
-    };
+    }
   },
   onLoad() {
-    this.loadData();
+    this.loadData()
   },
   onShow() {
-    this.loadData();
+    this.loadData()
   },
   computed: {
-    ...mapState(["isLogin"])
+    ...mapState(['isLogin'])
   },
   methods: {
     // 加载页面数据
     loadData() {
-      const { isLogin, $api } = this;
+      const { isLogin, $api } = this
       // 判断是否登录
       if (isLogin) {
         // 请求后台
         GetUserInfo().then(res => {
           $api.RequestMsg(res, false).then(({ avatar, nickname, sex, signature }) => {
-            this.avatar = avatar;
-            this.nickname = nickname;
-            this.sex = sex;
-            this.signature = signature;
-          });
-        });
+            this.avatar = avatar
+            this.nickname = nickname
+            this.sex = sex
+            this.signature = signature
+          })
+        })
       }
     },
     // 点击列表
@@ -111,27 +111,27 @@ export default {
       switch (index) {
         case 0:
           uni.switchTab({
-            url: "/pages/special/index"
-          });
-          break;
+            url: '/pages/special/index'
+          })
+          break
         case 1:
           uni.switchTab({
-            url: "/pages/imgtxt/index"
-          });
-          break;
+            url: '/pages/imgtxt/index'
+          })
+          break
         case 2:
-          this.navTo("/pages/function/index");
-          break;
+          this.navTo('/pages/function/index')
+          break
       }
     },
     // 点击头像
     onAvatar() {
-      const { isLogin, navTo } = this;
-      let url = isLogin ? "/pages/user/setting" : "/pages/admin/login"; // 获取跳转URL
-      navTo(url); // 跳转页面
+      const { isLogin, navTo } = this
+      let url = isLogin ? '/pages/user/setting' : '/pages/admin/login' // 获取跳转URL
+      navTo(url) // 跳转页面
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 $hd-height: 120rpx;

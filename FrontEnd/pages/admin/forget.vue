@@ -9,10 +9,10 @@
   </view>
 </template>
 <script>
-import InputBox from "@/components/InputBox";
-import VerifyCode from "@/components/InputBox/VerifyCode";
-import { GoForget } from "@/api/admin";
-import { mapState } from "vuex";
+import InputBox from '@/components/InputBox'
+import VerifyCode from '@/components/InputBox/VerifyCode'
+import { GoForget } from '@/api/admin'
+import { mapState } from 'vuex'
 export default {
   components: {
     InputBox,
@@ -22,16 +22,16 @@ export default {
     return {
       // 表单信息
       form: {
-        mobile: "", // 手机号
-        verifyCode: "", // 验证码
-        password: "", // 新密码
-        cpassword: "" // 确认密码
+        mobile: '', // 手机号
+        verifyCode: '', // 验证码
+        password: '', // 新密码
+        cpassword: '' // 确认密码
       }
-    };
+    }
   },
   onLoad() {},
   computed: {
-    ...mapState(["verifyCode"])
+    ...mapState(['verifyCode'])
   },
   methods: {
     // 点击确定按钮
@@ -41,32 +41,36 @@ export default {
         returnBack,
         $var: { PhoneReg, PwdReg },
         $api: { Msg, Loading, RequestMsg }
-      } = this;
-      const { mobile, verifyCode, password, cpassword } = form; // form表单
-      if (!PhoneReg.test(mobile)) { // 手机号校验
-        Msg("手机号格式错误");
-      } else if (verifyCode !== this.verifyCode) { // 验证码校验
-        Msg("验证码错误");
-      } else if (!PwdReg.test(password)) { // 密码校验
-        Msg("密码格式错误");
-      } else if (cpassword !== password) { // 重复密码校验
-        Msg("两次密码不一致");
+      } = this
+      const { mobile, verifyCode, password, cpassword } = form // form表单
+      if (!PhoneReg.test(mobile)) {
+        // 手机号校验
+        Msg('手机号格式错误')
+      } else if (verifyCode !== this.verifyCode) {
+        // 验证码校验
+        Msg('验证码错误')
+      } else if (!PwdReg.test(password)) {
+        // 密码校验
+        Msg('密码格式错误')
+      } else if (cpassword !== password) {
+        // 重复密码校验
+        Msg('两次密码不一致')
       } else {
-        Loading();
+        Loading()
         // 请求后台
         GoForget(form).then(res => {
           RequestMsg(res).then(() => {
-            Msg("修改密码成功");
+            Msg('修改密码成功')
             // 延迟返回
             setTimeout(() => {
-              returnBack();
-            }, 500);
-          });
-        });
+              returnBack()
+            }, 500)
+          })
+        })
       }
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-forget {

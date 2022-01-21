@@ -1,19 +1,18 @@
 <template>
   <!-- 模态框-热更新组件 -->
-  <view class="m-mask" :class="isShowMask?'show':''" v-if="isMask">
+  <view class="m-mask" :class="isShowMask ? 'show' : ''" v-if="isMask">
     <view class="m-picker">
-      <view class="u-tit">{{title}}</view>
+      <view class="u-tit">{{ title }}</view>
       <mine-progress :progress="progress"></mine-progress>
-      <view class="u-txt">{{progress}}%</view>
+      <view class="u-txt">{{ progress }}%</view>
     </view>
   </view>
-
 </template>
 <script>
-import MineProgress from "@/components/MineProgress";
-import { GetUpdateInfo } from "@/api/public";
+import MineProgress from '@/components/MineProgress'
+import { GetUpdateInfo } from '@/api/public'
 export default {
-  name: "HotUpdate",
+  name: 'HotUpdate',
   props: {
     // 是否显示更新
     isUpdate: {
@@ -26,11 +25,11 @@ export default {
   },
   data() {
     return {
-      title: "更新中...", // 显示标题
+      title: '更新中...', // 显示标题
       progress: 0, // 进度条
       isShowMask: false, // 是否显示状态
       isMask: false // 是否显示模态框
-    };
+    }
   },
   onLoad() {},
   methods: {
@@ -41,9 +40,9 @@ export default {
           this.$api.RequestMsg(res).then(({ version, downUrl }) => {
             if (version != widgetInfo.version) {
               this.$api
-                .ShowModal(`发现新版本${version}，点击确定即可更新！`, "提示")
+                .ShowModal(`发现新版本${version}，点击确定即可更新！`, '提示')
                 .then(() => {
-                  this.showModal();
+                  this.showModal()
                   let downloadTask = uni.downloadFile({
                     url: downUrl,
                     success: downloadResult => {
@@ -54,61 +53,61 @@ export default {
                             force: false
                           },
                           () => {
-                            plus.runtime.restart();
+                            plus.runtime.restart()
                           },
                           error => {
-                            this.$api.msg("安装失败");
+                            this.$api.msg('安装失败')
                             // console.error(error);
                           }
-                        );
+                        )
                       }
                     }
-                  });
+                  })
                   downloadTask.onProgressUpdate(res => {
-                    let progressVal = res.progress;
-                    this.progress = progressVal;
+                    let progressVal = res.progress
+                    this.progress = progressVal
                     if (progressVal == 100) {
-                      this.hideModal();
+                      this.hideModal()
                     }
-                  });
+                  })
                 })
                 .catch(() => {
-                  this.$emit("on-cancel");
-                });
+                  this.$emit('on-cancel')
+                })
             } else {
               this.$api
-                .ShowModal("当前已是最新版本", "提示")
+                .ShowModal('当前已是最新版本', '提示')
                 .then(() => {})
                 .catch(() => {
-                  this.$emit("on-cancel");
-                });
+                  this.$emit('on-cancel')
+                })
             }
-          });
-        });
-      });
+          })
+        })
+      })
     },
     // 显示模态框
     showModal() {
-      this.isMask = true;
+      this.isMask = true
       setTimeout(() => {
-        this.isShowMask = true;
-      }, 100);
+        this.isShowMask = true
+      }, 100)
     },
     // 隐藏模态框
     hideModal() {
-      this.isShowMask = false;
+      this.isShowMask = false
       setTimeout(() => {
-        this.isMask = false;
-      }, 400);
+        this.isMask = false
+      }, 400)
     }
   },
   watch: {
     // 监听是否更新
     isUpdate() {
-      this.hotUpdate();
+      this.hotUpdate()
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-mask {

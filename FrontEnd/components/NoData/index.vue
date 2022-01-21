@@ -4,13 +4,13 @@
 </template>
 <script>
 export default {
-  name: "NoData",
+  name: 'NoData',
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {}
-};
+}
 </script>
 <style scoped lang="scss">
 .m-no-data {

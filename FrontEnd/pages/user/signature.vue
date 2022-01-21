@@ -4,23 +4,26 @@
     <view class="u-label">设置个性签名</view>
     <view class="m-text">
       <textarea class="u-textarea" v-model="signature" placeholder="请输入个性签名" placeholder-style="color:#a4abb3;" :maxlength="totalNum"></textarea>
-      <view class="u-number"><text :class="number>totalNum?'danger':''">{{number}}</text>/{{totalNum}}</view>
+      <view class="u-number">
+        <text :class="number > totalNum ? 'danger' : ''">{{ number }}</text>
+        /{{ totalNum }}
+      </view>
     </view>
     <view class="btn-default" @tap="onEdit">修改</view>
   </view>
 </template>
 <script>
-import { GoEditInfo } from "@/api/user";
+import { GoEditInfo } from '@/api/user'
 export default {
   data() {
     return {
-      signature: "", // 个性签名
+      signature: '', // 个性签名
       number: 0, // 个性签名字数
       totalNum: 30 // 限制超过字数
-    };
+    }
   },
   onLoad({ data }) {
-    this.signature = this.$api.EnDnCodeURL(data, true);
+    this.signature = this.$api.EnDnCodeURL(data, true)
   },
   methods: {
     // 点击修改按钮
@@ -30,33 +33,33 @@ export default {
         totalNum,
         returnBack,
         $api: { Msg, Loading, RequestMsg }
-      } = this;
-      let len = signature.trim().length;
+      } = this
+      let len = signature.trim().length
       if (len === 0) {
-        Msg("个性签名不能为空");
+        Msg('个性签名不能为空')
       } else if (len > totalNum) {
-        Msg(`个性签名长度不能大于${totalNum}位`);
+        Msg(`个性签名长度不能大于${totalNum}位`)
       } else {
-        Loading();
+        Loading()
         // 请求后台
         GoEditInfo({ signature }).then(res => {
           RequestMsg(res).then(data => {
-            Msg("修改成功");
+            Msg('修改成功')
             setTimeout(() => {
-              returnBack();
-            }, 500);
-          });
-        });
+              returnBack()
+            }, 500)
+          })
+        })
       }
     }
   },
   watch: {
     // 监听个性签名
     signature(value) {
-      this.number = value.length;
+      this.number = value.length
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-signature {

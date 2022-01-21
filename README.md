@@ -1,6 +1,6 @@
 # MINEAPP
 
-<h2 style="text-align:center;"><a href="https://github.com/biaov/MINEAPP"><img src="https://img.shields.io/badge/version-1.0.1-blue" /></a></h2>
+<h2 style="text-align:center;"><a href="https://github.com/biaov/MINEAPP"><img src="https://img.shields.io/badge/version-1.0.3-blue" /></a></h2>
 
 这是一个Hybrid APP，有一些好玩的功能！
 
@@ -126,7 +126,7 @@ mysql -uroot < init.sql
 
 ### 微信小程序
 
-* 由于个人开发者权限不足，因此只有体验版
+* 由于个人开发者权限不足，因此只有体验版。
 
 <a href="https://open.weixin.qq.com/sns/getexpappinfo?appid=wxedb0edf60129ec39&path=pages%2Findex%2Findex.html#wechat-redirect" target="_blank"><img src="http://app.biaov.cn/mineapp/images/qrcode/Applet.png" width="200px" alt="微信小程序" title="微信小程序"></a>
 

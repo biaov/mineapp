@@ -1,13 +1,12 @@
 /*!
- * Copyright (c) Author biaov
- * Email biaov@qq.com
+ * Copyright (c) Author biaov<biaov@qq.com>
  * Date 2020-03-05
  */
 
-import store from "@/store";
-import Variable from "../global/variable";
-import Api from "../global/function";
-const { BaseUrl } = Variable;
+import store from '@/store'
+import Variable from '../global/variable'
+import Api from '../global/function'
+const { BaseUrl } = Variable
 /**
  * 请求API
  * @param {Object} Obj - 数据对象
@@ -20,38 +19,39 @@ const { BaseUrl } = Variable;
  */
 export const Request = async obj => {
   return new Promise(async (resolve, reject) => {
-    let { url, data, method, header, isToken } = obj;
-    if (!url) return;
-    url = BaseUrl + url; // 请求地址
-    data = data || {}; // 请求参数
-    method = method || "POST"; // 请求方法
-    header = header || {}; // 请求header信息
+    let { url, data, method, header, isToken } = obj
+    if (!url) return
+    url = BaseUrl + url // 请求地址
+    data = data || {} // 请求参数
+    method = method || 'POST' // 请求方法
+    header = header || {} // 请求header信息
     // 如果token为true,则添加token到header信息里去
-    !!isToken && (header.token = store.getters.userInfo.token);
+    !!isToken && (header.token = store.getters.userInfo.token)
     // 请求返回信息
     const [error, res] = await uni.request({
       url,
       data,
       method,
       header,
-      dataType: "json"
+      dataType: 'json'
       // sslVerify: false
-    });
+    })
     if (!!error) {
-      Api.Msg("网络错误");
+      // Api.ShowModal(JSON.stringify(error));
+      Api.Msg('网络错误')
     } else {
       // 判断状态值是否为200,200=>成功
       if (res.statusCode === 200) {
-        resolve(res.data);
+        resolve(res.data)
       } else {
-        console.log("url:" + url);
-        console.log("status:" + res.statusCode);
-        console.log("ajaxdata:" + JSON.stringify(data));
-        reject(error);
+        console.log('url:' + url)
+        console.log('status:' + res.statusCode)
+        console.log('ajaxdata:' + JSON.stringify(data))
+        reject(error)
         // console.log("res.data: " + JSON.stringify(res.data));
       }
     }
-  });
+  })
 }
 /**
  * 上传图片
@@ -63,13 +63,13 @@ export const Request = async obj => {
  */
 export const UploadImg = async obj => {
   return new Promise(async (resolve, reject) => {
-    let { url, data, isToken } = obj;
-    if (!url) return;
-    url = BaseUrl + url; // 请求地址
-    let filePath = data || ""; // 文件路径
-    let header = {}; // 请求header信息
+    let { url, data, isToken } = obj
+    if (!url) return
+    url = BaseUrl + url // 请求地址
+    let filePath = data || '' // 文件路径
+    let header = {} // 请求header信息
     // 如果token为true,则添加token到header信息里去
-    !!isToken && (header.token = store.getters.userInfo.token);
+    !!isToken && (header.token = store.getters.userInfo.token)
     // 请求返回信息
     const [error, res] = await uni.uploadFile({
       url,
@@ -78,20 +78,20 @@ export const UploadImg = async obj => {
       name: 'file',
       formData: {},
       header
-    });
+    })
     if (!!error) {
-      Api.Msg("网络错误");
+      Api.Msg('网络错误')
     } else {
       // 判断状态值是否为200,200=>成功
       if (res.statusCode === 200) {
-        resolve(JSON.parse(res.data));
+        resolve(JSON.parse(res.data))
       } else {
         // reject(error);
-        console.log("url:" + url);
-        console.log("status:" + res.statusCode);
+        console.log('url:' + url)
+        console.log('status:' + res.statusCode)
         // console.log("ajaxdata:" + JSON.stringify(ajaxdata));
         // console.log("res.data: " + JSON.stringify(res.data));
       }
     }
-  });
+  })
 }

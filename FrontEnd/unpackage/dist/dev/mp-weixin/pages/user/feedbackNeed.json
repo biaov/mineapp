@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我要反馈",
+  "usingComponents": {
+    "input-box": "/components/InputBox/index"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mine-progress": "/components/MineProgress/index"
+  }
+}

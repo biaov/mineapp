@@ -1,16 +1,16 @@
 <template>
   <!-- 文章列表 -->
   <view class="m-list-article">
-    <view v-for="(item,index) in list" :key="index" @tap="handleLi(item)">
+    <view v-for="(item, index) in list" :key="index" @tap="handleLi(item)">
       <image class="u-img" :src="item.src" mode="widthFix" lazy-load></image>
-      <view class="u-tit">{{item.title}}</view>
-      <view class="u-time">{{item.createTime}}</view>
+      <view class="u-tit">{{ item.title }}</view>
+      <view class="u-time">{{ item.createTime }}</view>
     </view>
   </view>
 </template>
 <script>
 export default {
-  name: "ListArticle",
+  name: 'ListArticle',
   props: {
     // 列表数据
     list: {
@@ -20,29 +20,29 @@ export default {
     // 跳转地址
     url: {
       type: String,
-      default: ""
+      default: ''
     },
     // id类型名称
     idName: {
       type: String,
-      default: "daid"
+      default: 'daid'
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {
     // 点击列表
     handleLi(item) {
-      const { url, idName } = this;
+      const { url, idName } = this
       // 判断是否允许跳转，默认不传不跳转
       if (!!url) {
-        this.navTo(`${url}?data=${item[idName]}`);
+        this.navTo(`${url}?data=${item[idName]}`)
       }
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-list-article {

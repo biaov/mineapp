@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "关于MINEAPP",
+  "usingComponents": {
+    "list-cell": "/components/ListCell/index",
+    "hot-update": "/components/HotUpdate/index"
+  }
+}

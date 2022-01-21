@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "修改密码",
+  "usingComponents": {
+    "input-box": "/components/InputBox/index",
+    "verify-code": "/components/InputBox/VerifyCode"
+  }
+}

@@ -3,8 +3,11 @@
   <view class="m-note-edit">
     <view class="u-label">笔记标题</view>
     <view class="m-input">
-      <input type="text" v-model="form.title" class="u-input" placeholder="请输入笔记标题" placeholder-style="color:#a4abb3;" :maxlength="totalNum">
-      <view class="u-number"><text :class="number>totalNum?'danger':''">{{number}}</text>/{{totalNum}}</view>
+      <input type="text" v-model="form.title" class="u-input" placeholder="请输入笔记标题" placeholder-style="color:#a4abb3;" :maxlength="totalNum" />
+      <view class="u-number">
+        <text :class="number > totalNum ? 'danger' : ''">{{ number }}</text>
+        /{{ totalNum }}
+      </view>
     </view>
     <view class="u-label">笔记内容</view>
     <view class="m-text">
@@ -15,9 +18,9 @@
   </view>
 </template>
 <script>
-import InputBox from "@/components/InputBox";
-import MineRichText from "@/components/MineRichText";
-import { GoNoteSubmit } from "@/api/user";
+import InputBox from '@/components/InputBox'
+import MineRichText from '@/components/MineRichText'
+import { GoNoteSubmit } from '@/api/user'
 export default {
   components: {
     InputBox,
@@ -27,24 +30,24 @@ export default {
     return {
       // 表单信息
       form: {
-        title: "",
-        content: ""
+        title: '',
+        content: ''
       },
       number: 0, // 个性签名字数
       totalNum: 16 // 限制超过字数
-    };
+    }
   },
   onLoad() {},
   computed: {
     // 获取标题值
     getTitle() {
-      return this.form.title;
+      return this.form.title
     }
   },
   methods: {
     // 当编辑器失去焦点时，触发
     onChange(value) {
-      this.form.content = value;
+      this.form.content = value
     },
     // 点击提交按钮
     onSubmit() {
@@ -53,32 +56,32 @@ export default {
         returnBack,
         form: { title, content },
         $api: { Msg, Loading, RequestMsg }
-      } = this;
-      const lenTit = title.trim().length;
+      } = this
+      const lenTit = title.trim().length
       if (lenTit === 0 || lenTit === totalNum) {
         // 标题长度校验
-        Msg(`笔记标题不能为空且不能大于${totalNum}`);
+        Msg(`笔记标题不能为空且不能大于${totalNum}`)
       } else {
-        Loading();
+        Loading()
         GoNoteSubmit(this.form).then(res => {
           RequestMsg(res).then(data => {
-            Msg("提交成功");
+            Msg('提交成功')
             // 延迟返回
             setTimeout(() => {
-              returnBack();
-            }, 500);
-          });
-        });
+              returnBack()
+            }, 500)
+          })
+        })
       }
     }
   },
   watch: {
     // 监听标题值
     getTitle(value) {
-      this.number = value.length;
+      this.number = value.length
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-note-edit {

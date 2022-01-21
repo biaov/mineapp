@@ -1,0 +1,1 @@
+<view class="m-list-picture data-v-bacb422c"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id"><view data-event-opts="{{[['tap',[['onLi',['$0'],[[['list','id',item.id]]]]]]]}}" bindtap="__e" class="data-v-bacb422c"><image src="{{item.src}}" mode="widthFix" class="data-v-bacb422c"></image></view></block></view>

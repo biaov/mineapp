@@ -1,6 +1,5 @@
 /*!
- * Copyright (c) Author biaov
- * Email biaov@qq.com
+ * Copyright (c) Author biaov<biaov@qq.com>
  * Date 2020-03-05
  */
 
@@ -12,17 +11,17 @@
  * @param {String} [icon=none] - 图标
  * @returns {Void}
  */
-const Msg = (title, duration = 1500, mask = true, icon = "none") => {
+const Msg = (title, duration = 1500, mask = true, icon = 'none') => {
   //统一提示方便全局修改
   if (Boolean(title) === false) {
-    return;
+    return
   }
   uni.showToast({
     title,
     duration,
     mask,
     icon
-  });
+  })
 }
 
 /**
@@ -31,14 +30,14 @@ const Msg = (title, duration = 1500, mask = true, icon = "none") => {
  * @param {Boolean} [mask=true] - 是否需要mask
  * @returns {Void}
  */
-const Loading = (title = "", mask = true) => {
+const Loading = (title = '', mask = true) => {
   uni.showLoading({
     title,
     mask
-  });
+  })
   setTimeout(() => {
-    uni.hideLoading();
-  }, 1000);
+    uni.hideLoading()
+  }, 1000)
 }
 
 /**
@@ -47,9 +46,9 @@ const Loading = (title = "", mask = true) => {
  * @returns {Void}
  */
 const PullDownRefresh = () => {
-  setTimeout(function() {
-    uni.stopPullDownRefresh();
-  }, 1000);
+  setTimeout(function () {
+    uni.stopPullDownRefresh()
+  }, 1000)
 }
 
 /**
@@ -59,25 +58,36 @@ const PullDownRefresh = () => {
  */
 const DrawScreen = async () => {
   return new Promise((resolve, reject) => {
-    let pages = getCurrentPages();
-    let page = pages[pages.length - 1];
-    let ws = page.$getAppWebview();
-    let bitmap = new plus.nativeObj.Bitmap('drawScreen');
+    let pages = getCurrentPages()
+    let page = pages[pages.length - 1]
+    let ws = page.$getAppWebview()
+    let bitmap = new plus.nativeObj.Bitmap('drawScreen')
     // 将webview内容绘制到Bitmap对象中
-    ws.draw(bitmap, () => {
-      bitmap.save("_doc/drawScreen.jpg", {
-        overwrite: true
-      }, res => {
-        resolve(res.target);
-      }, error => {
-        reject(error);
-      });
-      bitmap.clear();
-    }, error => {
-      reject(error);
-    }, {
-      check: true, // 设置为检测白屏
-    });
+    ws.draw(
+      bitmap,
+      () => {
+        bitmap.save(
+          '_doc/drawScreen.jpg',
+          {
+            overwrite: true
+          },
+          res => {
+            resolve(res.target)
+            bitmap.clear()
+          },
+          error => {
+            reject(error)
+            bitmap.clear()
+          }
+        )
+      },
+      error => {
+        reject(error)
+      },
+      {
+        check: true // 设置为检测白屏
+      }
+    )
   })
 }
 
@@ -86,22 +96,22 @@ const DrawScreen = async () => {
  * @param {String} content - 提示内容
  * @param {String} [title=提示] - 提示标题
  */
-const ShowModal = async (content, title = "提示") => {
+const ShowModal = async (content, title = '提示') => {
   return new Promise((resolve, reject) => {
     uni.showModal({
       title,
       content,
-      cancelColor: "#676666",
-      confirmColor: "#DB0404",
-      success: function(res) {
+      cancelColor: '#676666',
+      confirmColor: '#DB0404',
+      success: function (res) {
         if (res.confirm) {
-          resolve();
+          resolve()
         } else {
-          reject();
+          reject()
         }
       }
-    });
-  });
+    })
+  })
 }
 
 /**
@@ -114,49 +124,48 @@ const SelectImg = async () => {
     // 调用上传图片方法
     uni.chooseImage({
       count: 1,
-      sizeType: ["compressed"],
-      sourceType: ["album", "camera"],
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
       success: res => {
-        resolve(res);
+        resolve(res)
       },
       fail: err => {
-        reject(err);
+        reject(err)
       }
-    });
-  });
+    })
+  })
 }
 
 /**
  * 时间转化
- * @param {String|Date} str - 时间字符串或者Date对象 
+ * @param {String|Date} [str=Date] - 时间字符串或者Date对象
  * @returns {Object} - 返回时间对象
- * @returns {String|Number} {Object}.Y - 年
- * @returns {String|Number} {Object}.M - 年
- * @returns {String|Number} {Object}.D - 年
- * @returns {String|Number} {Object}.h - 年
- * @returns {String|Number} {Object}.m - 年
- * @returns {String|Number} {Object}.s - 年
+ * @returns {String} {Object}.Y - 年
+ * @returns {String} {Object}.M - 月
+ * @returns {String} {Object}.D - 日
+ * @returns {String} {Object}.h - 时
+ * @returns {String} {Object}.m - 分
+ * @returns {String} {Object}.s - 秒
+ * @returns {String} {Object}.date - 日期
+ * @returns {String} {Object}.time - 时间
+ * @returns {String} {Object}.datetime - 日期时间
  */
-const FormatTime = str => {
-  let data = new Date(str);
-  let Y = data.getFullYear();
-  let M = data.getMonth() + 1;
-  let D = data.getDate();
-  let h = data.getHours();
-  let m = data.getMinutes();
-  let s = data.getSeconds();
-  M = M < 10 ? "0" + M : M;
-  D = D < 10 ? "0" + D : D;
-  h = h < 10 ? "0" + h : h;
-  m = m < 10 ? "0" + m : m;
-  s = s < 10 ? "0" + s : s;
+const FormatTime = (str = new Date()) => {
+  const d = new Date(str) // 获取当前时间对象
+  const [Y, M, D, h, m, s] = [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()].map(num => (num < 10 ? '0' : '') + num)
+  const date = `${Y}-${M}-${D}` // 日期
+  const time = `${h}:${m}:${s}` // 时间
+  const datetime = `${date} ${time}` // 日期时间
   return {
     Y,
     M,
     D,
     h,
     m,
-    s
+    s,
+    date,
+    time,
+    datetime
   }
 }
 
@@ -168,7 +177,7 @@ const FormatTime = str => {
 const PreviewImg = url => {
   uni.previewImage({
     urls: [url]
-  });
+  })
 }
 
 /**
@@ -183,16 +192,16 @@ const PreviewImg = url => {
 const RequestMsg = (data, isMsg = true) => {
   return new Promise((resolve, reject) => {
     if (data.code == 1) {
-      resolve(data.data);
+      resolve(data.data)
     } else {
       if (isMsg) {
-        Msg(data.msg);
+        Msg(data.msg)
       } else {
-        console.log(data.msg);
+        console.log(data.msg)
       }
-      reject(data);
+      reject(data)
     }
-  });
+  })
 }
 /**
  * 获取本地版本信息
@@ -201,9 +210,9 @@ const RequestMsg = (data, isMsg = true) => {
 const VersionInfo = () => {
   return new Promise((resolve, reject) => {
     plus.runtime.getProperty(plus.runtime.appid, widgetInfo => {
-      resolve(widgetInfo);
-    });
-  });
+      resolve(widgetInfo)
+    })
+  })
 }
 /**
  * 随机数字
@@ -211,9 +220,9 @@ const VersionInfo = () => {
  * @param {String} [str=""] - 返回字符串
  * @returns {String} - 几位随机数字拼接字符串
  */
-const RandomNumber = (num = 6, str = "") => {
-  str += Math.ceil(Math.random() * 9);
-  return str.length === num ? str : RandomNumber(num, str);
+const RandomNumber = (num = 6, str = '') => {
+  str += Math.ceil(Math.random() * 9)
+  return str.length === num ? str : RandomNumber(num, str)
 }
 /**
  * ​显示操作菜单
@@ -226,13 +235,13 @@ const ShowActionSheet = array => {
     uni.showActionSheet({
       itemList: array,
       success: res => {
-        resolve(res.tapIndex);
+        resolve(res.tapIndex)
       },
       fail: error => {
-        reject(error);
+        reject(error)
       }
-    });
-  });
+    })
+  })
 }
 /**
  * 页面传值加解密
@@ -241,7 +250,7 @@ const ShowActionSheet = array => {
  * @returns {Any} - 加密，解密结果
  */
 const EnDnCodeURL = (data, type = false) => {
-  return type ? JSON.parse(decodeURIComponent(data)) : encodeURIComponent(JSON.stringify(data));
+  return type ? JSON.parse(decodeURIComponent(data)) : encodeURIComponent(JSON.stringify(data))
 }
 export default {
   Msg, // 提示消息

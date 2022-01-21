@@ -1,0 +1,9 @@
+# 目录
+static/
+unpackage/
+
+# 文件
+.prettierignore
+.prettierrc
+manifest.json
+

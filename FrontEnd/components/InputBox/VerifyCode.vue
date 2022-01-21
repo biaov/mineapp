@@ -1,26 +1,26 @@
 <template>
   <!-- 验证码输入框 -->
-  <view class="m-input input-box">
+  <view class="m-input">
     <text class="iconfont" :class="icon"></text>
-    <input type="text" class="u-input" :placeholder="placeholder" :placeholder-style="'color:'+placeholderStyle" v-model="inputValue" maxlength="6">
-    <text class="u-countdown" :class="isCountdown?'disabled':''" @tap="getVerifyCode">{{isCountdown?time+"s后重新获取":"获取验证码"}}</text>
+    <input type="text" class="u-input" :placeholder="placeholder" :placeholder-style="'color:' + placeholderStyle" v-model="inputValue" maxlength="6" />
+    <text class="u-countdown" :class="isCountdown ? 'disabled' : ''" @tap="getVerifyCode">{{ isCountdown ? time + 's后重新获取' : '获取验证码' }}</text>
   </view>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex'
 export default {
-  name: "VerifyCode",
+  name: 'VerifyCode',
   // 父组件使用v-model
   model: {
-    prop: "value",
-    event: "input"
+    prop: 'value',
+    event: 'input'
   },
   props: {
     // input类型
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     // 类别图标
     icon: {
@@ -30,66 +30,66 @@ export default {
     // 占位符
     placeholder: {
       type: String,
-      default: "请输入..."
+      default: '请输入...'
     },
     // 占位符样式
     placeholderStyle: {
       type: String,
-      default: "#a4abb3"
+      default: '#a4abb3'
     },
     // 动态传值
     value: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   data() {
     return {
-      inputValue: "", // input输入框绑定的值
+      inputValue: '', // input输入框绑定的值
       isCountdown: false, // 是否处于倒计时状态
       time: 60 // 倒计时
-    };
+    }
   },
   onLoad() {
-    this.inputValue = this.value;
+    this.inputValue = this.value
   },
   methods: {
-    ...mapActions(["VerifyCode"]),
+    ...mapActions(['VerifyCode']),
     // 开启倒计时
     startCountdown() {
       let timer = setInterval(() => {
-        this.time--;
+        this.time--
         if (this.time <= 0) {
-          this.isCountdown = !this.isCountdown;
-          clearInterval(timer);
-          this.time = 60;
+          this.isCountdown = !this.isCountdown
+          clearInterval(timer)
+          this.time = 60
         }
-      }, 1000);
+      }, 1000)
     },
     // 设置验证码
     setVerifyCode() {
-      let code = this.$api.RandomNumber();
-      this.VerifyCode(code);
+      let code = this.$api.RandomNumber()
+      this.VerifyCode(code)
       setTimeout(() => {
-        this.$api.Msg(code);
-      }, 1500);
+        this.$api.Msg(code)
+      }, 1500)
     },
     // 点击验证码按钮
     getVerifyCode() {
       if (!this.isCountdown) {
-        this.setVerifyCode();
-        this.isCountdown = !this.isCountdown;
-        this.startCountdown();
+        this.setVerifyCode()
+        this.isCountdown = !this.isCountdown
+        this.startCountdown()
       }
     }
   },
   watch: {
     // 监听input输入框内值的变化
     inputValue(val) {
-      this.$emit("input", val);
+      this.$emit('input', val)
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 @mixin same-height {
@@ -102,6 +102,7 @@ export default {
   width: 100%;
   height: 88rpx;
   border-radius: 44rpx;
+  margin-bottom: $common-padding;
   padding: 0 20rpx;
   background: $uni-bg-color-content;
   overflow: hidden;

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "特效",
+  "usingComponents": {
+    "layout": "/components/Layout/index",
+    "no-data": "/components/NoData/index",
+    "list-articel": "/components/ListCell/article",
+    "load-more": "/components/LoadMore/index"
+  }
+}

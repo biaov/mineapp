@@ -3,24 +3,27 @@
   <view class="m-nickname">
     <view class="u-label">设置昵称</view>
     <view class="m-input">
-      <input type="text" v-model="nickname" class="u-input" placeholder="请输入昵称" placeholder-style="color:#a4abb3;" :maxlength="totalNum">
-      <view class="u-number"><text :class="number>totalNum?'danger':''">{{number}}</text>/{{totalNum}}</view>
+      <input type="text" v-model="nickname" class="u-input" placeholder="请输入昵称" placeholder-style="color:#a4abb3;" :maxlength="totalNum" />
+      <view class="u-number">
+        <text :class="number > totalNum ? 'danger' : ''">{{ number }}</text>
+        /{{ totalNum }}
+      </view>
     </view>
     <view class="btn-default" @tap="onEdit">修改</view>
   </view>
 </template>
 <script>
-import { GoEditInfo } from "@/api/user";
+import { GoEditInfo } from '@/api/user'
 export default {
   data() {
     return {
-      nickname: "", // 昵称
+      nickname: '', // 昵称
       number: 0, // 个性签名字数
       totalNum: 10 // 限制超过字数
-    };
+    }
   },
   onLoad(options) {
-    this.nickname = options.data;
+    this.nickname = options.data
   },
   methods: {
     // 点击修改按钮
@@ -30,35 +33,35 @@ export default {
         totalNum,
         returnBack,
         $api: { Msg, Loading, RequestMsg }
-      } = this;
-      let len = nickname.trim().length;
+      } = this
+      let len = nickname.trim().length
       if (len === 0) {
         // 昵称长度校验
-        Msg("昵称不能为空");
+        Msg('昵称不能为空')
       } else if (len > totalNum) {
         // 昵称长度校验
-        Msg(`昵称长度不能大于${totalNum}位`);
+        Msg(`昵称长度不能大于${totalNum}位`)
       } else {
-        Loading();
+        Loading()
         GoEditInfo({ nickname }).then(res => {
           RequestMsg(res).then(() => {
-            Msg("修改成功");
+            Msg('修改成功')
             // 延迟返回
             setTimeout(() => {
-              returnBack();
-            }, 500);
-          });
-        });
+              returnBack()
+            }, 500)
+          })
+        })
       }
     }
   },
   watch: {
     // 监听个性签名
     nickname(value) {
-      this.number = value.length;
+      this.number = value.length
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .m-nickname {

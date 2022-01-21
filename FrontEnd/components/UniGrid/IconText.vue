@@ -1,12 +1,12 @@
 <template>
   <view class="m-icon-text">
-    <text class="iconfont" :class="icon" :style="'color:'+iconColor+';'"></text>
-    <text class="u-txt">{{text}}</text>
+    <text class="iconfont" :class="icon" :style="'color:' + iconColor + ';'"></text>
+    <text class="u-txt">{{ text }}</text>
   </view>
 </template>
 <script>
 export default {
-  name: "IconText",
+  name: 'IconText',
   props: {
     // 图标
     icon: {
@@ -16,7 +16,7 @@ export default {
     // 图标颜色
     iconColor: {
       type: String,
-      default: "#f60"
+      default: '#f60'
     },
     // 内容
     text: {
@@ -25,11 +25,11 @@ export default {
     }
   },
   data() {
-    return {};
+    return {}
   },
   onLoad() {},
   methods: {}
-};
+}
 </script>
 <style scoped lang="scss">
 .m-icon-text {

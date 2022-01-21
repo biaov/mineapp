@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "写笔记",
+  "usingComponents": {
+    "input-box": "/components/InputBox/index",
+    "mine-rich-text": "/components/MineRichText/index"
+  }
+}

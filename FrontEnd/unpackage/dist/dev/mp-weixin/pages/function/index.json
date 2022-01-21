@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "功能中心",
+  "usingComponents": {
+    "uni-grid": "/components/UniGrid/index",
+    "uni-grid-item": "/components/UniGrid/UniGridItem",
+    "icon-text": "/components/UniGrid/IconText"
+  }
+}

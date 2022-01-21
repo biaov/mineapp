@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "热点",
+  "usingComponents": {
+    "layout": "/components/Layout/index",
+    "list-articel": "/components/ListCell/article",
+    "list-picture": "/components/ListCell/picture"
+  }
+}

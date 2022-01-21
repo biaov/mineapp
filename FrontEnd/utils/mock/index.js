@@ -1,2 +1,2 @@
-import Agreement from "./agreement";
-export default { ...Agreement };
+import Agreement from './agreement'
+export default { ...Agreement }
