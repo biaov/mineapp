@@ -18,7 +18,7 @@
   "dependencies": {
     "chinese-random-name": "^1.0.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.0",
     "http": "0.0.0",
     "https": "^1.0.0",
