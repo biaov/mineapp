@@ -1,8 +1,10 @@
-# MINEAPP
+# ![停止维护](https://raw.githubusercontent.com/biaov/biaov/custom-assets/deprecated01.svg), 此项目基于 Vue2.x，版本落后，新项目基于 Vue3.x，请移步 [ecosystem](https://github.com/biaov/ecosystem)
 
-## 此项目基于 Vue2.x，版本落后，停止维护，新项目基于 Vue3.x
-## 新项目地址：[ecosystem](https://github.com/biaov/ecosystem)
-## 此项目演示地址已失效
+```diff
+! 此项目演示地址已失效
+```
+
+# MINEAPP
 
 <h2 style="text-align:center;"><a href="https://github.com/biaov/MINEAPP"><img src="https://img.shields.io/badge/version-1.0.3-blue" /></a></h2>
 
