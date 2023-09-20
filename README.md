@@ -6,7 +6,10 @@
 
 # MINEAPP
 
-<h2 style="text-align:center;"><a href="https://github.com/biaov/MINEAPP"><img src="https://img.shields.io/badge/version-1.0.3-blue" /></a></h2>
+<h2 style="text-align:center;">
+    <a href="https://github.com/biaov/MINEAPP"><img src="https://img.shields.io/badge/version-1.0.3-blue" /></a>
+    <a href="https://github.com/biaov/mineapp/blob/main/LICENSE"><img src="https://img.shields.io/github/license/biaov/mineapp.svg?logo=Unlicense" /></a>
+</h2>
 
 这是一个 Hybrid APP，有一些好玩的功能！
 
@@ -120,27 +123,6 @@ mysql -uroot < init.sql
 
 <a href="https://github.com/biaov/MINEAPP/blob/master/BackEnd/data/table.png"><img src="https://github.com/biaov/MINEAPP/blob/master/BackEnd/data/table.png" width="50%" alt="数据库表" title="数据库表"></a>
 
-## 演示
+## 贡献者们
 
-### Android
-
-<a href="http://appdown.biaov.cn/ugft"><img src="http://app.biaov.cn/mineapp/images/qrcode/Android.png" width="200px" alt="Android" title="Android"></a>
-
-### H5
-
-<a href="http://mineapph5.app.biaov.cn/"><img src="http://app.biaov.cn/mineapp/images/qrcode/H5.png" width="200px" alt="H5" title="H5"></a>
-
-### 微信小程序
-
-- 由于个人开发者权限不足，因此只有体验版。
-
-<a href="https://open.weixin.qq.com/sns/getexpappinfo?appid=wxedb0edf60129ec39&path=pages%2Findex%2Findex.html#wechat-redirect" target="_blank"><img src="http://app.biaov.cn/mineapp/images/qrcode/Applet.png" width="200px" alt="微信小程序" title="微信小程序"></a>
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2020-present, TalkingData.
-
-[^_^]: 我们改变不了生活，但是我们可以改变对待生活的态度
-[^_^]: 作者就是一个逗比
+[![贡献者们](https://contrib.rocks/image?repo=biaov/mine-h5-ui)](https://github.com/biaov/mine-h5-ui/graphs/contributors)
