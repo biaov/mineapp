@@ -121,7 +121,7 @@ mysql -uroot < init.sql
 - MySQL 文件：**[init.sql](https://github.com/biaov/MINEAPP/blob/master/BackEnd/data/init.sql)**
 - MySQL 表图片:
 
-<a href="https://github.com/biaov/MINEAPP/blob/master/BackEnd/data/table.png"><img src="https://github.com/biaov/MINEAPP/blob/master/BackEnd/data/table.png" width="50%" alt="数据库表" title="数据库表"></a>
+<img src="https://raw.githubusercontent.com/biaov/mineapp/main/BackEnd/data/table.png" width="50%" alt="数据库表" title="数据库表"></a>
 
 ## 贡献者们
 
