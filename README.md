@@ -125,4 +125,4 @@ mysql -uroot < init.sql
 
 ## 贡献者们
 
-[![贡献者们](https://contrib.rocks/image?repo=biaov/mine-h5-ui)](https://github.com/biaov/mine-h5-ui/graphs/contributors)
+[![贡献者们](https://contrib.rocks/image?repo=biaov/mineapp)](https://github.com/biaov/mineapp/graphs/contributors)
