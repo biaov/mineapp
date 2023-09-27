@@ -1,4 +1,4 @@
-# ![停止维护](https://raw.githubusercontent.com/biaov/biaov/custom-assets/deprecated01.svg), 此项目基于 Vue2.x，版本落后，新项目基于 Vue3.x，请移步 [ecosystem](https://github.com/biaov/ecosystem)
+# ![停止维护](https://github-statistics-biaov.vercel.app/api/generate-text-image?text=停止维护), 此项目基于 Vue2.x，版本落后，新项目基于 Vue3.x，请移步 [ecosystem](https://github.com/biaov/ecosystem)
 
 ```diff
 ! 此项目演示地址已失效
